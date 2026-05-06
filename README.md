@@ -10,7 +10,7 @@
 [![Azure](https://img.shields.io/badge/Azure-AZ--900%20→%20AZ--305-0078D4)]()
 [![AWS](https://img.shields.io/badge/AWS-CLF%20→%20SAP-FF9900)]()
 [![GCP](https://img.shields.io/badge/GCP-CDL%20→%20PCA-4285F4)]()
-[![OCI](https://img.shields.io/badge/OCI-Foundations%20→%20Architect-F80000)]()
+[![OCI](https://img.shields.io/badge/OCI-1Z0--1085--25%20→%201Z0--997--25-F80000)]()
 
 ---
 
@@ -40,11 +40,13 @@ en los 4 clouds principales. Azure es el eje central del aprendizaje.
 
 | Fase | Objetivo | Azure | AWS | GCP | OCI |
 |------|----------|-------|-----|-----|-----|
-| **F1** | Fundamentos — el lenguaje común | AZ-900 | CLF-C02 | CDL | Foundations |
-| **F2** | Administración — operar en producción | AZ-104 | SAA-C03 | ACE | Administrator |
-| **F3** | Seguridad — hardening y compliance | AZ-500 | SCS-C02 | PCSE | Security Pro |
-| **F4** | Arquitectura — diseñar a escala | AZ-305 | SAP-C02 | PCA | Architect Pro |
+| **F1** | Fundamentos — el lenguaje común | AZ-900 | CLF-C02 | CDL | 1Z0-1085-25 |
+| **F2** | Administración — operar en producción | AZ-104 | SAA-C03 | ACE | 1Z0-1093-25 |
+| **F3** | Seguridad — hardening y compliance | AZ-500 | SCS-C03 | PCSE | 1Z0-1104-25 |
+| **F4** | Arquitectura — diseñar a escala | AZ-305 | SAP-C02 | PCA | 1Z0-997-25 |
 | **FinOps** | Comparativa transversal de costos | Azure Cost Mgmt | Cost Explorer | Cost Tools | OCI Cost |
+
+> ⚠️ **Nota:** AWS SCS-C02 fue retirado en diciembre 2025. El examen vigente es **SCS-C03**.
 
 ---
 
@@ -96,12 +98,13 @@ RoadmapMultiCloud-ES/
 ├── LICENSE                          ← CC BY-NC-SA 4.0
 ├── CONTRIBUTING.md                  ← Cómo contribuir
 ├── TEMPLATE-LAB.md                  ← Plantilla universal de lab
+├── ANALISIS-REPOS.md                ← Análisis de referencia y correcciones
 │
 ├── fase-1-fundamentos/
 │   ├── azure/az-900/
 │   ├── aws/clf-c02/
 │   ├── gcp/cdl/
-│   └── oci/foundations/
+│   └── oci/1z0-1085-25/
 │
 ├── fase-2-administracion/
 │   ├── azure/az-104/
@@ -122,19 +125,19 @@ RoadmapMultiCloud-ES/
 │   │   └── Lab-11-Monitoring/
 │   ├── aws/saa-c03/
 │   ├── gcp/ace/
-│   └── oci/administrator/
+│   └── oci/1z0-1093-25/
 │
 ├── fase-3-seguridad/
 │   ├── azure/az-500/
-│   ├── aws/scs-c02/
+│   ├── aws/scs-c03/                 ← ⚠️ SCS-C02 retirado dic 2025
 │   ├── gcp/pcse/
-│   └── oci/security-pro/
+│   └── oci/1z0-1104-25/
 │
 ├── fase-4-arquitectura/
 │   ├── azure/az-305/
 │   ├── aws/sap-c02/
 │   ├── gcp/pca/
-│   └── oci/architect-pro/
+│   └── oci/1z0-997-25/
 │
 └── comparativa-finops/
     ├── README.md                    ← Análisis transversal completo
@@ -161,8 +164,9 @@ RoadmapMultiCloud-ES/
 | F2 | Azure | AZ-104 | 0 / 14 | 🔜 Próximamente |
 | F2 | AWS | SAA-C03 | 0 / 14 | 🔜 Próximamente |
 | F2 | GCP | ACE | 0 / 10 | 🔜 Próximamente |
-| F2 | OCI | Administrator | 0 / 8 | 🔜 Próximamente |
+| F2 | OCI | 1Z0-1093-25 | 0 / 8 | 🔜 Próximamente |
 | F3 | Azure | AZ-500 | 0 / 10 | 🔜 Próximamente |
+| F3 | AWS | SCS-C03 | 0 / 10 | 🔜 Próximamente |
 | F4 | Azure | AZ-305 | 0 / 10 | 🔜 Próximamente |
 | — | Todos | FinOps | — | 🔜 Al finalizar F4 |
 
