@@ -5,12 +5,12 @@
 > Documentado en español · Licencia CC BY-NC-SA 4.0
 
 [![Licencia: CC BY-NC-SA 4.0](https://img.shields.io/badge/Licencia-CC%20BY--NC--SA%204.0-lightgrey.svg)](LICENSE)
-[![Estado](https://img.shields.io/badge/Estado-En%20construcción-yellow)]()
-[![Idioma](https://img.shields.io/badge/Idioma-Español-blue)]()
-[![Azure](https://img.shields.io/badge/Azure-AZ--900%20→%20AZ--305-0078D4)]()
-[![AWS](https://img.shields.io/badge/AWS-CLF%20→%20SAP-FF9900)]()
-[![GCP](https://img.shields.io/badge/GCP-CDL%20→%20PCA-4285F4)]()
-[![OCI](https://img.shields.io/badge/OCI-1Z0--1085--25%20→%201Z0--997--25-F80000)]()
+[![Estado](https://img.shields.io/badge/Estado-En%20construcci%C3%B3n-yellow)]()
+[![Idioma](https://img.shields.io/badge/Idioma-Espa%C3%B1ol-blue)]()
+[![Azure](https://img.shields.io/badge/Azure-AZ--900%20%E2%86%92%20AZ--305-0078D4)]()
+[![AWS](https://img.shields.io/badge/AWS-CLF%20%E2%86%92%20SAP-FF9900)]()
+[![GCP](https://img.shields.io/badge/GCP-CDL%20%E2%86%92%20PCA-4285F4)]()
+[![OCI](https://img.shields.io/badge/OCI-1Z0--1085--25%20%E2%86%92%201Z0--997--25-F80000)]()
 
 ---
 
@@ -35,164 +35,64 @@ documentados y comparativa FinOps entre los cuatro grandes clouds.
 
 ## 🗺️ El Roadmap completo
 
-El proyecto está organizado en **4 fases progresivas**. Cada fase tiene su equivalente
-en los 4 clouds principales. Azure es el eje central del aprendizaje.
-
 | Fase | Objetivo | Azure | AWS | GCP | OCI |
 |------|----------|-------|-----|-----|-----|
-| **F1** | Fundamentos — el lenguaje común | AZ-900 | CLF-C02 | CDL | 1Z0-1085-25 |
-| **F2** | Administración — operar en producción | AZ-104 | SAA-C03 | ACE | 1Z0-1093-25 |
-| **F3** | Seguridad — hardening y compliance | AZ-500 | SCS-C03 | PCSE | 1Z0-1104-25 |
-| **F4** | Arquitectura — diseñar a escala | AZ-305 | SAP-C02 | PCA | 1Z0-997-25 |
-| **FinOps** | Comparativa transversal de costos | Azure Cost Mgmt | Cost Explorer | Cost Tools | OCI Cost |
+| **F1** | Fundamentos | AZ-900 | CLF-C02 | CDL | 1Z0-1085-25 |
+| **F2** | Administración | AZ-104 | SAA-C03 | ACE | 1Z0-1093-25 |
+| **F3** | Seguridad | AZ-500 | SCS-C03 | PCSE | 1Z0-1104-25 |
+| **F4** | Arquitectura | AZ-305 | SAP-C02 | PCA | 1Z0-997-25 |
 
-> ⚠️ **Nota:** AWS SCS-C02 fue retirado en diciembre 2025. El examen vigente es **SCS-C03**.
+> ⚠️ AWS SCS-C02 fue retirado en diciembre 2025. El examen vigente es **SCS-C03**.
 
 ---
 
-## 🧩 Estructura de cada laboratorio
-
-Cada módulo temático tiene **3 niveles de profundidad**:
+## 🧩 Estructura de cada lab
 
 ```
 Lab-XX-nombre/
-├── lab-base/          # Nivel 1 — Conoce
-│   ├── README.md      # Lab oficial enriquecido en español
-│   ├── capturas/      # Screenshots de cada tarea
-│   └── costos.md      # Costo real documentado con billing
-│
-├── lab-avanzado/      # Nivel 2 — Aplica
-│   ├── README.md      # Escenario de empresa real
-│   ├── iac/           # Bicep / CloudFormation / Terraform
-│   ├── scripts/       # CLI (az / aws / gcloud / oci)
-│   └── troubleshooting.md
-│
-└── finops/            # Nivel 3 — Decide
-    ├── README.md      # Comparativa de costos entre 4 clouds
-    ├── tabla-costos.md
-    └── cuando-elegir.md
-```
-
-### Nivel 1 · Lab base — *Conoce*
-Lab oficial enriquecido con capturas por cada tarea, costo real documentado
-(screenshot de billing incluido), errores comunes y limpieza de recursos
-con 3 métodos: Portal · CLI · IaC.
-
-### Nivel 2 · Lab avanzado — *Aplica*
-Escenario de empresa ficticia pero realista que **integra todos los labs anteriores**.
-Incluye versión IaC, scripts CLI y sección de troubleshooting real.
-
-### Nivel 3 · Análisis FinOps — *Decide*
-Para cada servicio del lab: tabla comparativa con el equivalente en los otros clouds,
-costo real por hora de lab, costo mensual proyectado a escala, herramienta nativa de
-gestión de costos y recomendación de cuándo elegir cada cloud.
-
----
-
-## 📁 Estructura del repositorio
-
-```
-RoadmapMultiCloud-ES/
-│
-├── README.md                        ← Este archivo · índice maestro
-├── LICENSE                          ← CC BY-NC-SA 4.0
-├── CONTRIBUTING.md                  ← Cómo contribuir
-├── TEMPLATE-LAB.md                  ← Plantilla universal de lab
-├── ANALISIS-REPOS.md                ← Análisis de referencia y correcciones
-│
-├── fase-1-fundamentos/
-│   ├── azure/az-900/
-│   ├── aws/clf-c02/
-│   ├── gcp/cdl/
-│   └── oci/1z0-1085-25/
-│
-├── fase-2-administracion/
-│   ├── azure/az-104/
-│   │   ├── README.md                ← Índice AZ-104 + costos totales
-│   │   ├── Lab-01-Entra-ID/         ← ✅ Completado (base + avanzado + finops)
-│   │   ├── Lab-02a-RBAC/
-│   │   ├── Lab-02b-Policy/
-│   │   ├── Lab-03-ARM-Bicep/
-│   │   ├── Lab-04-VNets/
-│   │   ├── Lab-05-Intersite/
-│   │   ├── Lab-06-Traffic-Manager/
-│   │   ├── Lab-07-Storage/
-│   │   ├── Lab-08-VMs/
-│   │   ├── Lab-09a-PaaS-Web/
-│   │   ├── Lab-09b-ACI/
-│   │   ├── Lab-09c-AKS/
-│   │   ├── Lab-10-Backup/
-│   │   └── Lab-11-Monitoring/
-│   ├── aws/saa-c03/
-│   ├── gcp/ace/
-│   └── oci/1z0-1093-25/
-│
-├── fase-3-seguridad/
-│   ├── azure/az-500/
-│   ├── aws/scs-c03/                 ← ⚠️ SCS-C02 retirado dic 2025
-│   ├── gcp/pcse/
-│   └── oci/1z0-1104-25/
-│
-├── fase-4-arquitectura/
-│   ├── azure/az-305/
-│   ├── aws/sap-c02/
-│   ├── gcp/pca/
-│   └── oci/1z0-997-25/
-│
-└── comparativa-finops/
-    ├── README.md                    ← Análisis transversal completo
-    ├── por-servicio/
-    │   ├── identidades.md
-    │   ├── redes.md
-    │   ├── almacenamiento.md
-    │   ├── compute.md
-    │   ├── seguridad.md
-    │   └── monitoring.md
-    └── tco-scenarios/
-        ├── startup.md
-        ├── empresa-mediana.md
-        └── enterprise.md
+├── lab-base/       ← Nivel 1: lab oficial enriquecido + capturas + costo real
+├── lab-avanzado/   ← Nivel 2: escenario empresa real + IaC + troubleshooting
+└── finops/         ← Nivel 3: comparativa 4 clouds + cuándo elegir cada uno
 ```
 
 ---
 
-## 🚀 Estado del proyecto
+## 📋 AZ-104 — Fase 2 Administración
 
-| Fase | Cloud | Cert | Labs | Estado |
-|------|-------|------|------|--------|
-| F1 | Azure | AZ-900 | 0 / 6 | 🔜 Próximamente |
-| F2 | Azure | AZ-104 | 1 / 14 | 🟡 En progreso |
-| — | Azure | AZ-104 · Lab-01 Entra ID | base + avanzado + finops | ✅ Completado |
-| — | Azure | AZ-104 · Lab-02a RBAC | — | 🔜 Próximamente |
-| — | Azure | AZ-104 · Lab-02b Policy | — | 🔜 Próximamente |
-| — | Azure | AZ-104 · Lab-03 ARM-Bicep | — | 🔜 Próximamente |
-| — | Azure | AZ-104 · Lab-04 VNets | — | 🔜 Próximamente |
-| — | Azure | AZ-104 · Lab-05 Intersite | — | 🔜 Próximamente |
-| — | Azure | AZ-104 · Lab-06 Traffic Manager | — | 🔜 Próximamente |
-| — | Azure | AZ-104 · Lab-07 Storage | — | 🔜 Próximamente |
-| — | Azure | AZ-104 · Lab-08 VMs | — | 🔜 Próximamente |
-| — | Azure | AZ-104 · Lab-09a PaaS-Web | — | 🔜 Próximamente |
-| — | Azure | AZ-104 · Lab-09b ACI | — | 🔜 Próximamente |
-| — | Azure | AZ-104 · Lab-09c AKS | — | 🔜 Próximamente |
-| — | Azure | AZ-104 · Lab-10 Backup | — | 🔜 Próximamente |
-| — | Azure | AZ-104 · Lab-11 Monitoring | — | 🔜 Próximamente |
-| F2 | AWS | SAA-C03 | 0 / 14 | 🔜 Próximamente |
-| F2 | GCP | ACE | 0 / 10 | 🔜 Próximamente |
-| F2 | OCI | 1Z0-1093-25 | 0 / 8 | 🔜 Próximamente |
-| F3 | Azure | AZ-500 | 0 / 10 | 🔜 Próximamente |
-| F3 | AWS | SCS-C03 | 0 / 10 | 🔜 Próximamente |
-| F4 | Azure | AZ-305 | 0 / 10 | 🔜 Próximamente |
-| — | Todos | FinOps | — | 🔜 Al finalizar F4 |
+Los 14 labs del AZ-104 están documentados en español con capturas por cada paso,
+3 métodos por tarea (Portal / CLI / IaC), errores comunes y análisis FinOps comparativo.
+Costo total de los 14 labs ejecutados y limpiados: **~$8–12 USD**.
+
+| # | Lab | Dominio AZ-104 |
+|---|-----|---------------|
+| 01 | [Entra ID Identidades](fase-2-administracion/azure/az-104/Lab-01-Entra-ID/lab-base/README.md) | Identidades y gobernanza (20–25%) |
+| 02a | [RBAC](fase-2-administracion/azure/az-104/Lab-02a-RBAC/lab-base/README.md) | Identidades y gobernanza (20–25%) |
+| 02b | [Azure Policy](fase-2-administracion/azure/az-104/Lab-02b-Policy/lab-base/README.md) | Identidades y gobernanza (20–25%) |
+| 03 | [ARM Templates y Bicep](fase-2-administracion/azure/az-104/Lab-03-ARM-Bicep/lab-base/README.md) | Recursos Azure (15–20%) |
+| 04 | [Virtual Networking](fase-2-administracion/azure/az-104/Lab-04-VNets/lab-base/README.md) | Redes virtuales (25–30%) |
+| 05 | [Intersite Connectivity](fase-2-administracion/azure/az-104/Lab-05-Intersite/lab-base/README.md) | Redes virtuales (25–30%) |
+| 06 | [Network Traffic Management](fase-2-administracion/azure/az-104/Lab-06-Traffic-Manager/lab-base/README.md) | Redes virtuales (25–30%) |
+| 07 | [Azure Storage](fase-2-administracion/azure/az-104/Lab-07-Storage/lab-base/README.md) | Almacenamiento (15–20%) |
+| 08 | [Virtual Machines](fase-2-administracion/azure/az-104/Lab-08-VMs/lab-base/README.md) | Compute (20–25%) |
+| 09a | [Web Apps PaaS](fase-2-administracion/azure/az-104/Lab-09a-PaaS-Web/lab-base/README.md) | Compute (20–25%) |
+| 09b | [Azure Container Instances](fase-2-administracion/azure/az-104/Lab-09b-ACI/lab-base/README.md) | Compute (20–25%) |
+| 09c | [Azure Container Apps](fase-2-administracion/azure/az-104/Lab-09c-AKS/lab-base/README.md) | Compute (20–25%) |
+| 10 | [Data Protection y Backup](fase-2-administracion/azure/az-104/Lab-10-Backup/lab-base/README.md) | Protección de datos (10–15%) |
+| 11 | [Monitoring](fase-2-administracion/azure/az-104/Lab-11-Monitoring/lab-base/README.md) | Monitoreo (10–15%) |
 
 ---
 
-## 💰 Filosofía de costos
+## 🚀 Próximas fases
 
-Todos los labs documentan el **costo real incurrido** con capturas del portal de billing.
-El objetivo es que puedas planificar tu gasto de estudio con datos reales, no estimados.
-
-Como referencia: los 14 labs del AZ-104 ejecutados completos cuestan aproximadamente
-**$8–12 USD** si se limpian los recursos al terminar cada lab.
+| Fase | Cert | Estado |
+|------|------|--------|
+| F1 | AZ-900 | 🔜 Próximamente |
+| F2 | SAA-C03 (AWS) | 🔜 Próximamente |
+| F2 | ACE (GCP) | 🔜 Próximamente |
+| F2 | 1Z0-1093-25 (OCI) | 🔜 Próximamente |
+| F3 | AZ-500 | 🔜 Próximamente |
+| F4 | AZ-305 | 🔜 Próximamente |
+| FinOps | Todos los clouds | 🔜 Al finalizar F4 |
 
 ---
 
