@@ -1,4 +1,4 @@
-# RBAC — Control de Acceso Basado en Roles — Lab 02a
+﻿# RBAC — Control de Acceso Basado en Roles — Lab 02a
 
 > Fase: F2 | Cert: AZ-104 | Lab: 02a | Tipo: base
 
@@ -109,22 +109,22 @@ Un Resource Group limpio usado exclusivamente como ámbito de asignaciones RBAC.
 
 1. Navega a **portal.azure.com** → busca **Resource groups** en la barra superior
 
-   ![Captura paso 1](capturas/tarea1-paso-01-buscar-rg.png)
+   <img src="capturas/tarea1-paso-01-buscar-rg.png" alt="Captura paso 1" width="50%">
 
 2. Haz clic en **+ Create**
 
-   ![Captura paso 2](capturas/tarea1-paso-02-crear-rg.png)
+   <img src="capturas/tarea1-paso-02-crear-rg.png" alt="Captura paso 2" width="50%">
 
 3. Rellena los campos:
    - **Subscription:** tu suscripción activa
    - **Resource group:** `rg-lab-02a-rbac`
    - **Region:** `East US`
 
-   ![Captura paso 3](capturas/tarea1-paso-03-campos-rg.png)
+   <img src="capturas/tarea1-paso-03-campos-rg.png" alt="Captura paso 3" width="50%">
 
 4. Haz clic en **Review + create** → **Create**
 
-   ![Captura paso 4](capturas/tarea1-paso-04-resultado-rg.png)
+   <img src="capturas/tarea1-paso-04-resultado-rg.png" alt="Captura paso 4" width="50%">
 
 ### Método B — CLI
 
@@ -175,33 +175,33 @@ az deployment sub create `
 
 1. Navega al Resource Group `rg-lab-02a-rbac` → selecciona **Access control (IAM)** en el menú lateral
 
-   ![Captura paso 1](capturas/tarea2-paso-01-iam-menu.png)
+   <img src="capturas/tarea2-paso-01-iam-menu.png" alt="Captura paso 1" width="50%">
 
 2. Haz clic en **+ Add** → **Add role assignment**
 
-   ![Captura paso 2](capturas/tarea2-paso-02-add-role.png)
+   <img src="capturas/tarea2-paso-02-add-role.png" alt="Captura paso 2" width="50%">
 
 3. En la pestaña **Role**, busca y selecciona **Reader** → **Next**
 
-   ![Captura paso 3](capturas/tarea2-paso-03-seleccionar-reader.png)
+   <img src="capturas/tarea2-paso-03-seleccionar-reader.png" alt="Captura paso 3" width="50%">
 
 4. En la pestaña **Members**:
    - **Assign access to:** `User, group, or service principal`
    - Haz clic en **+ Select members** → busca `az104-user01` → selecciona → **Select**
 
-   ![Captura paso 4](capturas/tarea2-paso-04-seleccionar-user01.png)
+   <img src="capturas/tarea2-paso-04-seleccionar-user01.png" alt="Captura paso 4" width="50%">
 
 5. Haz clic en **Review + assign** → **Review + assign** (confirma dos veces)
 
-   ![Captura paso 5](capturas/tarea2-paso-05-confirmar-reader.png)
+   <img src="capturas/tarea2-paso-05-confirmar-reader.png" alt="Captura paso 5" width="50%">
 
 6. Repite los pasos 2–5 para asignar el rol **Contributor** al grupo `az104-admins`
 
-   ![Captura paso 6](capturas/tarea2-paso-06-contributor-admins.png)
+   <img src="capturas/tarea2-paso-06-contributor-admins.png" alt="Captura paso 6" width="50%">
 
 7. En la pestaña **Role assignments** verifica que aparecen ambas asignaciones
 
-   ![Captura paso 7](capturas/tarea2-paso-07-verificar-asignaciones.png)
+   <img src="capturas/tarea2-paso-07-verificar-asignaciones.png" alt="Captura paso 7" width="50%">
 
 ### Método B — CLI
 
@@ -282,20 +282,20 @@ resource contributorAssignment 'Microsoft.Authorization/roleAssignments@2022-04-
 
 1. En el Resource Group `rg-lab-02a-rbac` → **Access control (IAM)** → pestaña **Check access**
 
-   ![Captura paso 1](capturas/tarea3-paso-01-check-access.png)
+   <img src="capturas/tarea3-paso-01-check-access.png" alt="Captura paso 1" width="50%">
 
 2. En el buscador escribe `az104-user01` → selecciona el usuario
 
-   ![Captura paso 2](capturas/tarea3-paso-02-buscar-usuario.png)
+   <img src="capturas/tarea3-paso-02-buscar-usuario.png" alt="Captura paso 2" width="50%">
 
 3. Verifica que aparece el rol **Reader** con scope en el Resource Group
 
-   ![Captura paso 3](capturas/tarea3-paso-03-permisos-efectivos.png)
+   <img src="capturas/tarea3-paso-03-permisos-efectivos.png" alt="Captura paso 3" width="50%">
 
 4. Abre una sesión de incógnito → inicia sesión como `az104-user01` → navega al RG  
    Verifica que puede **ver** los recursos pero el botón **+ Create** está deshabilitado
 
-   ![Captura paso 4](capturas/tarea3-paso-04-vista-reader.png)
+   <img src="capturas/tarea3-paso-04-vista-reader.png" alt="Captura paso 4" width="50%">
 
 ### Método B — CLI
 
@@ -340,17 +340,17 @@ az role assignment list `
 
 1. Navega a la **Suscripción** → **Access control (IAM)** → **+ Add** → **Add custom role**
 
-   ![Captura paso 1](capturas/tarea4-paso-01-add-custom-role.png)
+   <img src="capturas/tarea4-paso-01-add-custom-role.png" alt="Captura paso 1" width="50%">
 
 2. Selecciona **Start from scratch** → **Next**
 
-   ![Captura paso 2](capturas/tarea4-paso-02-scratch.png)
+   <img src="capturas/tarea4-paso-02-scratch.png" alt="Captura paso 2" width="50%">
 
 3. En la pestaña **Basics**:
    - **Custom role name:** `VM-Operator-Lab02a`
    - **Description:** `Permite iniciar, detener y reiniciar VMs. Sin permisos de creación ni eliminación.`
 
-   ![Captura paso 3](capturas/tarea4-paso-03-basics.png)
+   <img src="capturas/tarea4-paso-03-basics.png" alt="Captura paso 3" width="50%">
 
 4. En la pestaña **Permissions** → **+ Add permissions** → busca `Microsoft.Compute/virtualMachines`  
    Selecciona únicamente:
@@ -359,15 +359,15 @@ az role assignment list `
    - `Microsoft.Compute/virtualMachines/restart/action`
    - `Microsoft.Compute/virtualMachines/read`
 
-   ![Captura paso 4](capturas/tarea4-paso-04-permissions.png)
+   <img src="capturas/tarea4-paso-04-permissions.png" alt="Captura paso 4" width="50%">
 
 5. En la pestaña **Assignable scopes** verifica que incluye tu suscripción → **Next**
 
-   ![Captura paso 5](capturas/tarea4-paso-05-scopes.png)
+   <img src="capturas/tarea4-paso-05-scopes.png" alt="Captura paso 5" width="50%">
 
 6. En **Review + create** → **Create**
 
-   ![Captura paso 6](capturas/tarea4-paso-06-crear-rol.png)
+   <img src="capturas/tarea4-paso-06-crear-rol.png" alt="Captura paso 6" width="50%">
 
 ### Método B — CLI
 
@@ -590,7 +590,7 @@ Write-Host "Limpieza completada." -ForegroundColor Yellow
 
 **Captura del billing:**
 
-![Billing del lab](capturas/billing-lab-02a.png)
+<img src="capturas/billing-lab-02a.png" alt="Billing del lab" width="50%">
 
 **Fecha de ejecución:** [VERIFICAR COSTO — completar al ejecutar]  
 **Región:** East US  

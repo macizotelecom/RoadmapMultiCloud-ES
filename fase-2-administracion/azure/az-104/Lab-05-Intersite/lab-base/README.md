@@ -1,4 +1,4 @@
-# Intersite Connectivity — Lab 05
+﻿# Intersite Connectivity — Lab 05
 
 > Fase: F2 | Cert: AZ-104 | Lab: 05 | Tipo: base
 
@@ -109,28 +109,28 @@ East US
 
 1. Portal → **Virtual machines** → **+ Create** → **Azure virtual machine**
 
-   ![Buscar VM](capturas/t1-paso-01-buscar-vm.png)
-   ![Crear VM](capturas/t1-paso-02-crear-vm.png)
+   <img src="capturas/t1-paso-01-buscar-vm.png" alt="Buscar VM" width="50%">
+   <img src="capturas/t1-paso-02-crear-vm.png" alt="Crear VM" width="50%">
 
 2. Configura la pestaña **Basics**:
    - **RG:** `az104-rg5` | **Name:** `CoreServicesVM` | **Region:** East US
    - **Security type:** Standard | **Image:** Windows Server 2025 Datacenter x64 Gen2
    - **Size:** Standard_D2s_v3 | **Username:** `localadmin` | **Inbound ports:** None
 
-   ![Basics CoreServicesVM](capturas/t1-paso-03-basics-coreservicesvm.png)
-   ![Basics continuación](capturas/t1-paso-04-basics-continuacion.png)
+   <img src="capturas/t1-paso-03-basics-coreservicesvm.png" alt="Basics CoreServicesVM" width="50%">
+   <img src="capturas/t1-paso-04-basics-continuacion.png" alt="Basics continuación" width="50%">
 
 3. Pestaña **Networking** → **Virtual network: Create new** → configura:
    - **Name:** `CoreServicesVnet` | **Address range:** `10.0.0.0/16`
    - **Subnet:** `Core` | `10.0.0.0/24`
 
-   ![Crear CoreServicesVnet](capturas/t1-paso-05-crear-coreservicesvnet.png)
+   <img src="capturas/t1-paso-05-crear-coreservicesvnet.png" alt="Crear CoreServicesVnet" width="50%">
 
 4. Pestaña **Monitoring** → **Boot diagnostics:** Disabled → **Review + create** → **Create**
 
-   ![Review create](capturas/t1-paso-06-review-create.png)
-   ![Deployment iniciado](capturas/t1-paso-07-deployment-iniciado.png)
-   ![Deployment completado](capturas/t1-paso-08-deployment-completado.png)
+   <img src="capturas/t1-paso-06-review-create.png" alt="Review create" width="50%">
+   <img src="capturas/t1-paso-07-deployment-iniciado.png" alt="Deployment iniciado" width="50%">
+   <img src="capturas/t1-paso-08-deployment-completado.png" alt="Deployment completado" width="50%">
 
 > ⏱️ No es necesario esperar — continúa con la Tarea 2 mientras se despliega.
 
@@ -147,26 +147,26 @@ East US
 
 1. Portal → **Virtual machines** → **+ Create**
 
-   ![Nueva VM](capturas/t2-paso-01-nueva-vm.png)
+   <img src="capturas/t2-paso-01-nueva-vm.png" alt="Nueva VM" width="50%">
 
 2. Configura:
    - **RG:** `az104-rg5` | **Name:** `ManufacturingVM` | **Region:** East US
    - **Image:** Windows Server 2025 | **Size:** Standard_D2s_v3 | **Inbound ports:** None
 
-   ![Basics ManufacturingVM](capturas/t2-paso-02-basics-manufacturingvm.png)
-   ![Basics continuación](capturas/t2-paso-03-basics-continuacion.png)
+   <img src="capturas/t2-paso-02-basics-manufacturingvm.png" alt="Basics ManufacturingVM" width="50%">
+   <img src="capturas/t2-paso-03-basics-continuacion.png" alt="Basics continuación" width="50%">
 
 3. **Networking** → **Create new VNet**:
    - **Name:** `ManufacturingVnet` | **Address range:** `172.16.0.0/16`
    - **Subnet:** `Manufacturing` | `172.16.0.0/24`
 
-   ![Crear ManufacturingVnet](capturas/t2-paso-04-crear-manufacturingvnet.png)
+   <img src="capturas/t2-paso-04-crear-manufacturingvnet.png" alt="Crear ManufacturingVnet" width="50%">
 
 4. **Monitoring** → Disabled → **Review + create** → **Create**
 
-   ![Monitoring disabled](capturas/t2-paso-05-monitoring-disabled.png)
-   ![Review create](capturas/t2-paso-06-review-create.png)
-   ![Deployment completado](capturas/t2-paso-07-deployment-completado.png)
+   <img src="capturas/t2-paso-05-monitoring-disabled.png" alt="Monitoring disabled" width="50%">
+   <img src="capturas/t2-paso-06-review-create.png" alt="Review create" width="50%">
+   <img src="capturas/t2-paso-07-deployment-completado.png" alt="Deployment completado" width="50%">
 
 **Resultado esperado:**
 > Dos VMs en dos VNets distintas, ambas en East US, sin conectividad entre sí todavía.
@@ -181,19 +181,19 @@ East US
 
 1. Portal → **Network Watcher** → **Connection troubleshoot**
 
-   ![Buscar Network Watcher](capturas/t3-paso-01-buscar-network-watcher.png)
-   ![Connection troubleshoot](capturas/t3-paso-02-connection-troubleshoot.png)
+   <img src="capturas/t3-paso-01-buscar-network-watcher.png" alt="Buscar Network Watcher" width="50%">
+   <img src="capturas/t3-paso-02-connection-troubleshoot.png" alt="Connection troubleshoot" width="50%">
 
 2. Configura el test:
    - **Source:** `CoreServicesVM`
    - **Destination:** `ManufacturingVM`
    - **Protocol:** TCP | **Port:** 3389
 
-   ![Configurar test](capturas/t3-paso-03-configurar-test.png)
+   <img src="capturas/t3-paso-03-configurar-test.png" alt="Configurar test" width="50%">
 
 3. **Ejecutar pruebas de diagnóstico** → resultado esperado: **INACCESIBLE**
 
-   ![Ejecutar diagnóstico](capturas/t3-paso-04-ejecutar-diagnostico.png)
+   <img src="capturas/t3-paso-04-ejecutar-diagnostico.png" alt="Ejecutar diagnóstico" width="50%">
 
 > El resultado INACCESIBLE es correcto — las VNets están aisladas sin peering.
 
@@ -210,9 +210,9 @@ East US
 
 1. Portal → **CoreServicesVnet** → **Emparejamientos** → **+ Agregar**
 
-   ![CoreServicesVnet](capturas/t4-paso-01-coreservicesvnet.png)
-   ![Ir a VNet](capturas/t4-paso-02-ir-a-vnet.png)
-   ![Menú peerings](capturas/t4-paso-03-menu-peerings.png)
+   <img src="capturas/t4-paso-01-coreservicesvnet.png" alt="CoreServicesVnet" width="50%">
+   <img src="capturas/t4-paso-02-ir-a-vnet.png" alt="Ir a VNet" width="50%">
+   <img src="capturas/t4-paso-03-menu-peerings.png" alt="Menú peerings" width="50%">
 
 2. Configura el peering:
    - **Nombre del vínculo:** `ManufacturingVnet-to-CoreServicesVnet`
@@ -220,14 +220,14 @@ East US
    - **Peering link name (remoto):** `CoreServicesVnet-to-ManufacturingVnet`
    - Habilita tráfico en ambas direcciones
 
-   ![Agregar peering](capturas/t4-paso-04-agregar-peering.png)
-   ![Configurar peering](capturas/t4-paso-05-configurar-peering.png)
+   <img src="capturas/t4-paso-04-agregar-peering.png" alt="Agregar peering" width="50%">
+   <img src="capturas/t4-paso-05-configurar-peering.png" alt="Configurar peering" width="50%">
 
 3. Verifica el estado: **Connected**
 
-   ![Peering CoreServices creado](capturas/t4-paso-06-peering-coreservices-creado.png)
-   ![Peering Manufacturing vista](capturas/t4-paso-07-peering-manufacturing-vista.png)
-   ![Peering connected](capturas/t4-paso-08-peering-connected.png)
+   <img src="capturas/t4-paso-06-peering-coreservices-creado.png" alt="Peering CoreServices creado" width="50%">
+   <img src="capturas/t4-paso-07-peering-manufacturing-vista.png" alt="Peering Manufacturing vista" width="50%">
+   <img src="capturas/t4-paso-08-peering-connected.png" alt="Peering connected" width="50%">
 
 ### Método B — CLI
 
@@ -265,17 +265,17 @@ az network vnet peering create `
 
 1. Anota la IP privada de `CoreServicesVM` desde su Overview → sección Redes
 
-   ![IP privada CoreServicesVM](capturas/t5-paso-01-ip-privada-coreservicesvm.png)
+   <img src="capturas/t5-paso-01-ip-privada-coreservicesvm.png" alt="IP privada CoreServicesVM" width="50%">
 
 2. Navega a `ManufacturingVM`
 
-   ![Ir ManufacturingVM](capturas/t5-paso-02-ir-manufacturingvm.png)
-   ![Manufacturing overview](capturas/t5-paso-03-manufacturing-overview.png)
+   <img src="capturas/t5-paso-02-ir-manufacturingvm.png" alt="Ir ManufacturingVM" width="50%">
+   <img src="capturas/t5-paso-03-manufacturing-overview.png" alt="Manufacturing overview" width="50%">
 
 3. **Operaciones** → **Ejecutar comando** → **RunPowerShellScript**
 
-   ![Run command](capturas/t5-paso-04-run-command.png)
-   ![RunPowerShellScript](capturas/t5-paso-05-runpowershellscript.png)
+   <img src="capturas/t5-paso-04-run-command.png" alt="Run command" width="50%">
+   <img src="capturas/t5-paso-05-runpowershellscript.png" alt="RunPowerShellScript" width="50%">
 
 4. Ejecuta el comando (reemplaza la IP):
 
@@ -283,12 +283,12 @@ az network vnet peering create `
 Test-NetConnection <IP-privada-de-CoreServicesVM> -port 3389
 ```
 
-   ![Test-NetConnection cmd](capturas/t5-paso-06-test-netconnection-cmd.png)
-   ![Ejecutar script](capturas/t5-paso-07-ejecutar-script.png)
+   <img src="capturas/t5-paso-06-test-netconnection-cmd.png" alt="Test-NetConnection cmd" width="50%">
+   <img src="capturas/t5-paso-07-ejecutar-script.png" alt="Ejecutar script" width="50%">
 
 5. Resultado: `TcpTestSucceeded: True`
 
-   ![Resultado conectado](capturas/t5-paso-08-resultado-conectado.png)
+   <img src="capturas/t5-paso-08-resultado-conectado.png" alt="Resultado conectado" width="50%">
 
 **Resultado esperado:**
 > `TcpTestSucceeded: True` — el peering permite comunicación directa entre las VMs usando IPs privadas.
@@ -304,18 +304,18 @@ Test-NetConnection <IP-privada-de-CoreServicesVM> -port 3389
 1. En `CoreServicesVnet` → **Subredes** → **+ Subred**:
    - **Name:** `perimeter` | **Starting address:** `10.0.1.0/24`
 
-   ![CoreServicesVnet subnets](capturas/t6-paso-01-coreservicesvnet-subnets.png)
-   ![Ver subnets](capturas/t6-paso-02-ver-subnets.png)
-   ![Crear subnet perimeter](capturas/t6-paso-03-crear-subnet-perimeter.png)
+   <img src="capturas/t6-paso-01-coreservicesvnet-subnets.png" alt="CoreServicesVnet subnets" width="50%">
+   <img src="capturas/t6-paso-02-ver-subnets.png" alt="Ver subnets" width="50%">
+   <img src="capturas/t6-paso-03-crear-subnet-perimeter.png" alt="Crear subnet perimeter" width="50%">
 
 2. Portal → **Route tables** → **+ Crear**:
    - **RG:** `az104-rg5` | **Region:** East US | **Name:** `rt-CoreServices`
    - **Propagar rutas de puertas de enlace:** No
 
-   ![Buscar route tables](capturas/t6-paso-04-buscar-route-tables.png)
-   ![Crear route table](capturas/t6-paso-05-crear-route-table.png)
-   ![Route table basics](capturas/t6-paso-06-route-table-basics.png)
-   ![Route table creada](capturas/t6-paso-07-route-table-creada.png)
+   <img src="capturas/t6-paso-04-buscar-route-tables.png" alt="Buscar route tables" width="50%">
+   <img src="capturas/t6-paso-05-crear-route-table.png" alt="Crear route table" width="50%">
+   <img src="capturas/t6-paso-06-route-table-basics.png" alt="Route table basics" width="50%">
+   <img src="capturas/t6-paso-07-route-table-creada.png" alt="Route table creada" width="50%">
 
 3. Selecciona `rt-CoreServices` → **Rutas** → **+ Agregar**:
    - **Route name:** `PerimetertoCore`
@@ -323,15 +323,15 @@ Test-NetConnection <IP-privada-de-CoreServicesVM> -port 3389
    - **Next hop type:** Virtual appliance
    - **Next hop address:** `10.0.1.7`
 
-   ![Ir rt-CoreServices](capturas/t6-paso-08-ir-rt-coreservices.png)
-   ![Agregar ruta](capturas/t6-paso-09-agregar-ruta.png)
-   ![Configurar ruta NVA](capturas/t6-paso-10-configurar-ruta-nva.png)
-   ![Ruta guardada](capturas/t6-paso-11-ruta-guardada.png)
+   <img src="capturas/t6-paso-08-ir-rt-coreservices.png" alt="Ir rt-CoreServices" width="50%">
+   <img src="capturas/t6-paso-09-agregar-ruta.png" alt="Agregar ruta" width="50%">
+   <img src="capturas/t6-paso-10-configurar-ruta-nva.png" alt="Configurar ruta NVA" width="50%">
+   <img src="capturas/t6-paso-11-ruta-guardada.png" alt="Ruta guardada" width="50%">
 
 4. **Subnets** → **+ Associate** → `CoreServicesVnet / perimeter`
 
-   ![Asociar subnet](capturas/t6-paso-12-asociar-subnet.png)
-   ![Subnet perimeter asociada](capturas/t6-paso-13-subnet-perimeter-asociada.png)
+   <img src="capturas/t6-paso-12-asociar-subnet.png" alt="Asociar subnet" width="50%">
+   <img src="capturas/t6-paso-13-subnet-perimeter-asociada.png" alt="Subnet perimeter asociada" width="50%">
 
 ### Método B — CLI
 

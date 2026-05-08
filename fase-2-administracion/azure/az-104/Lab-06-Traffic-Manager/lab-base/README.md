@@ -1,4 +1,4 @@
-# Network Traffic Management — Lab 06
+﻿# Network Traffic Management — Lab 06
 
 > Fase: F2 | Cert: AZ-104 | Lab: 06 | Tipo: base
 
@@ -101,32 +101,32 @@ Internet
 
 1. Descarga los archivos `az104-06-vms-template.json` y `az104-06-vms-parameters.json` desde la web oficial del lab
 
-   ![Descargar lab06](capturas/t1-paso-01-descargar-lab06.png)
+   <img src="capturas/t1-paso-01-descargar-lab06.png" alt="Descargar lab06" width="50%">
 
 2. Portal → **Deploy a custom template**
 
-   ![Custom template](capturas/t1-paso-02-custom-template.png)
+   <img src="capturas/t1-paso-02-custom-template.png" alt="Custom template" width="50%">
 
 3. **Build your own template in the editor**
 
-   ![Build template](capturas/t1-paso-03-build-template.png)
+   <img src="capturas/t1-paso-03-build-template.png" alt="Build template" width="50%">
 
 4. **Load file** → selecciona `az104-06-vms-template.json`
 
-   ![Load file](capturas/t1-paso-04-load-file.png)
+   <img src="capturas/t1-paso-04-load-file.png" alt="Load file" width="50%">
 
 5. **Edit parameters** → carga `az104-06-vms-parameters.json` → configura contraseña
 
-   ![Cargar parameters](capturas/t1-paso-05-cargar-parameters.png)
+   <img src="capturas/t1-paso-05-cargar-parameters.png" alt="Cargar parameters" width="50%">
 
 6. Configura el despliegue:
    - **RG:** `az104-rg6` | **Password:** introduce contraseña segura
 
-   ![Configurar deployment](capturas/t1-paso-06-configurar-deployment.png)
+   <img src="capturas/t1-paso-06-configurar-deployment.png" alt="Configurar deployment" width="50%">
 
 7. **Review + create** → **Create** → espera ~5 minutos
 
-   ![Recursos desplegados](capturas/t1-paso-07-recursos-desplegados.png)
+   <img src="capturas/t1-paso-07-recursos-desplegados.png" alt="Recursos desplegados" width="50%">
 
 **Resultado esperado:**
 > Una VNet con tres subredes y tres VMs (`az104-06-vm0`, `az104-06-vm1`, `az104-06-vm2`) desplegadas con un servidor web activo en cada una.
@@ -141,33 +141,33 @@ Internet
 
 1. Portal → **Load balancers** → **+ Create**
 
-   ![Buscar LB](capturas/t2-paso-01-buscar-lb.png)
-   ![Crear LB](capturas/t2-paso-02-crear-lb.png)
+   <img src="capturas/t2-paso-01-buscar-lb.png" alt="Buscar LB" width="50%">
+   <img src="capturas/t2-paso-02-crear-lb.png" alt="Crear LB" width="50%">
 
 2. Configura:
    - **RG:** `az104-rg6` | **Name:** `az104-lb` | **SKU:** Standard | **Type:** Public | **Tier:** Regional
 
-   ![LB basics](capturas/t2-paso-03-lb-basics.png)
+   <img src="capturas/t2-paso-03-lb-basics.png" alt="LB basics" width="50%">
 
 3. Pestaña **Frontend IP** → **+ Add**:
    - **Name:** `az104-fe` | **Public IP:** Create new → `az104-lbpip` (Standard, Static)
 
-   ![Frontend IP](capturas/t2-paso-04-frontend-ip.png)
-   ![Nueva IP pública](capturas/t2-paso-05-nueva-ip-publica.png)
-   ![Frontend guardado](capturas/t2-paso-06-frontend-guardado.png)
+   <img src="capturas/t2-paso-04-frontend-ip.png" alt="Frontend IP" width="50%">
+   <img src="capturas/t2-paso-05-nueva-ip-publica.png" alt="Nueva IP pública" width="50%">
+   <img src="capturas/t2-paso-06-frontend-guardado.png" alt="Frontend guardado" width="50%">
 
 4. Pestaña **Backend pools** → **+ Add**:
    - **Name:** `az104-be` | **VNet:** `az104-06-vnet1`
    - Agrega `az104-06-vm0` y `az104-06-vm1`
 
-   ![Backend pool tab](capturas/t2-paso-07-backend-pool-tab.png)
-   ![Agregar backend pool](capturas/t2-paso-08-agregar-backend-pool.png)
+   <img src="capturas/t2-paso-07-backend-pool-tab.png" alt="Backend pool tab" width="50%">
+   <img src="capturas/t2-paso-08-agregar-backend-pool.png" alt="Agregar backend pool" width="50%">
 
 5. **Review + create** → **Create** → **Go to resource**
 
-   ![LB deployed](capturas/t2-paso-09-lb-deployed.png)
-   ![LB overview](capturas/t2-paso-10-lb-overview.png)
-   ![LB ir al recurso](capturas/t2-paso-11-lb-go-to-resource.png)
+   <img src="capturas/t2-paso-09-lb-deployed.png" alt="LB deployed" width="50%">
+   <img src="capturas/t2-paso-10-lb-overview.png" alt="LB overview" width="50%">
+   <img src="capturas/t2-paso-11-lb-go-to-resource.png" alt="LB ir al recurso" width="50%">
 
 6. **Load balancing rules** → **+ Add**:
    - **Name:** `az104-lbrule` | **Frontend:** `az104-fe` | **Backend:** `az104-be`
@@ -175,15 +175,15 @@ Internet
    - **Health probe:** Create new → `az104-hp` (TCP:80, interval 5s)
    - **Session persistence:** None
 
-   ![LB rules](capturas/t2-paso-12-lb-rules.png)
-   ![Agregar LB rule](capturas/t2-paso-13-agregar-lb-rule.png)
-   ![Health probe](capturas/t2-paso-14-health-probe.png)
+   <img src="capturas/t2-paso-12-lb-rules.png" alt="LB rules" width="50%">
+   <img src="capturas/t2-paso-13-agregar-lb-rule.png" alt="Agregar LB rule" width="50%">
+   <img src="capturas/t2-paso-14-health-probe.png" alt="Health probe" width="50%">
 
 7. Copia la IP pública del frontend → abre en el navegador → refresca varias veces
 
-   ![Copiar IP frontend](capturas/t2-paso-15-copiar-ip-frontend.png)
-   ![Hello World vm0](capturas/t2-paso-16-hello-world-vm0.png)
-   ![Hello World vm1](capturas/t2-paso-17-hello-world-vm1.png)
+   <img src="capturas/t2-paso-15-copiar-ip-frontend.png" alt="Copiar IP frontend" width="50%">
+   <img src="capturas/t2-paso-16-hello-world-vm0.png" alt="Hello World vm0" width="50%">
+   <img src="capturas/t2-paso-17-hello-world-vm1.png" alt="Hello World vm1" width="50%">
 
 ### Método B — CLI
 
@@ -215,69 +215,69 @@ az network lb rule create --name "az104-lbrule" --lb-name "az104-lb" --resource-
 1. Portal → **Virtual networks** → `az104-06-vnet1` → **Subnets** → **+ Subnet**:
    - **Name:** `subnet-appgw` | **Starting address:** `10.60.3.224/27`
 
-   ![Buscar VNets](capturas/t3-paso-01-buscar-vnets.png)
-   ![Seleccionar vnet1](capturas/t3-paso-02-seleccionar-vnet1.png)
-   ![Agregar subnet appgw](capturas/t3-paso-03-agregar-subnet-appgw.png)
-   ![Subnet appgw config](capturas/t3-paso-04-subnet-appgw-config.png)
+   <img src="capturas/t3-paso-01-buscar-vnets.png" alt="Buscar VNets" width="50%">
+   <img src="capturas/t3-paso-02-seleccionar-vnet1.png" alt="Seleccionar vnet1" width="50%">
+   <img src="capturas/t3-paso-03-agregar-subnet-appgw.png" alt="Agregar subnet appgw" width="50%">
+   <img src="capturas/t3-paso-04-subnet-appgw-config.png" alt="Subnet appgw config" width="50%">
 
 2. Portal → **Application gateways** → **+ Create**
 
-   ![Buscar AppGW](capturas/t3-paso-05-buscar-appgw.png)
-   ![Crear AppGW](capturas/t3-paso-06-crear-appgw.png)
+   <img src="capturas/t3-paso-05-buscar-appgw.png" alt="Buscar AppGW" width="50%">
+   <img src="capturas/t3-paso-06-crear-appgw.png" alt="Crear AppGW" width="50%">
 
 3. **Basics**:
    - **RG:** `az104-rg6` | **Name:** `az104-appgw` | **Tier:** Standard V2
    - **Autoscaling:** No | **Instances:** 2 | **VNet:** `az104-06-vnet1` | **Subnet:** `subnet-appgw`
 
-   ![AppGW basics](capturas/t3-paso-07-appgw-basics.png)
+   <img src="capturas/t3-paso-07-appgw-basics.png" alt="AppGW basics" width="50%">
 
 4. **Frontends** → IP pública → Create new → `az104-gwpip`
 
-   ![Frontend IP](capturas/t3-paso-08-frontend-ip.png)
+   <img src="capturas/t3-paso-08-frontend-ip.png" alt="Frontend IP" width="50%">
 
 5. **Backends** → Agrega tres pools:
    - `az104-appgwbe`: vm1 + vm2
    - `az104-imagebe`: vm1 (nic1)
    - `az104-videobe`: vm2 (nic2)
 
-   ![Backend general](capturas/t3-paso-09-backend-general.png)
-   ![Backend imagenes](capturas/t3-paso-10-backend-imagenes.png)
-   ![Backend videos](capturas/t3-paso-11-backend-videos.png)
+   <img src="capturas/t3-paso-09-backend-general.png" alt="Backend general" width="50%">
+   <img src="capturas/t3-paso-10-backend-imagenes.png" alt="Backend imagenes" width="50%">
+   <img src="capturas/t3-paso-11-backend-videos.png" alt="Backend videos" width="50%">
 
 6. **Configuration** → **+ Add routing rule**:
    - **Rule name:** `az104-gwrule` | **Priority:** 10
    - **Listener:** `az104-listener` | HTTP:80
 
-   ![Configuration tab](capturas/t3-paso-12-configuration-tab.png)
-   ![Agregar routing rule](capturas/t3-paso-13-agregar-routing-rule.png)
+   <img src="capturas/t3-paso-12-configuration-tab.png" alt="Configuration tab" width="50%">
+   <img src="capturas/t3-paso-13-agregar-routing-rule.png" alt="Agregar routing rule" width="50%">
 
 7. **Backend targets** → `az104-appgwbe` → **HTTP settings:** Create new `az104-http`
 
-   ![HTTP settings](capturas/t3-paso-14-http-settings.png)
+   <img src="capturas/t3-paso-14-http-settings.png" alt="HTTP settings" width="50%">
 
 8. **Path-based routing** → agrega:
    - `/image/*` → `az104-imagebe`
    - `/video/*` → `az104-videobe`
 
-   ![Path based image](capturas/t3-paso-15-path-based-image.png)
-   ![Path based video](capturas/t3-paso-16-path-based-video.png)
-   ![Path rules configuradas](capturas/t3-paso-17-path-rules-configuradas.png)
+   <img src="capturas/t3-paso-15-path-based-image.png" alt="Path based image" width="50%">
+   <img src="capturas/t3-paso-16-path-based-video.png" alt="Path based video" width="50%">
+   <img src="capturas/t3-paso-17-path-rules-configuradas.png" alt="Path rules configuradas" width="50%">
 
 9. **Review + create** → **Create** → espera 5-10 minutos
 
-   ![Review create](capturas/t3-paso-18-review-create.png)
-   ![Deployment completado](capturas/t3-paso-19-deployment-completado.png)
+   <img src="capturas/t3-paso-18-review-create.png" alt="Review create" width="50%">
+   <img src="capturas/t3-paso-19-deployment-completado.png" alt="Deployment completado" width="50%">
 
 10. Verifica **Backend health** → ambos backends deben estar **Healthy**
 
-    ![Backend health](capturas/t3-paso-20-backend-health.png)
+    <img src="capturas/t3-paso-20-backend-health.png" alt="Backend health" width="50%">
 
 11. Prueba en el navegador:
     - `http://<ip-appgw>/image/` → vm1
     - `http://<ip-appgw>/video/` → vm2
 
-    ![Test image path](capturas/t3-paso-21-test-image-path.png)
-    ![Test video path](capturas/t3-paso-22-test-video-path.png)
+    <img src="capturas/t3-paso-21-test-image-path.png" alt="Test image path" width="50%">
+    <img src="capturas/t3-paso-22-test-video-path.png" alt="Test video path" width="50%">
 
 **Resultado esperado:**
 > Las rutas `/image/` y `/video/` redirigen a servidores distintos. El Application Gateway demuestra routing basado en contenido de la URL.
@@ -314,8 +314,8 @@ az network lb rule create --name "az104-lbrule" --lb-name "az104-lb" --resource-
 
 `az104-rg6` → **Eliminar grupo de recursos**
 
-![Limpieza](capturas/limpieza-eliminar-rg.png)
-![Limpieza confirmación](capturas/limpieza-confirmacion.png)
+<img src="capturas/limpieza-eliminar-rg.png" alt="Limpieza" width="50%">
+<img src="capturas/limpieza-confirmacion.png" alt="Limpieza confirmación" width="50%">
 
 ### Método B — CLI
 

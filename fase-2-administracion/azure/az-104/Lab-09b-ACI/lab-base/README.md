@@ -1,4 +1,4 @@
-# Azure Container Instances — Lab 09b
+﻿# Azure Container Instances — Lab 09b
 
 > Fase: F2 | Cert: AZ-104 | Lab: 09b | Tipo: base
 
@@ -91,28 +91,28 @@ Un contenedor accesible públicamente via DNS que ejecuta una aplicación web de
 
 1. Portal → **Container Instances** → **+ Create**
 
-   ![Buscar Container Instances](capturas/t1-paso-01-buscar-container-instances.png)
-   ![Crear ACI](capturas/t1-paso-02-crear-aci.png)
+   <img src="capturas/t1-paso-01-buscar-container-instances.png" alt="Buscar Container Instances" width="50%">
+   <img src="capturas/t1-paso-02-crear-aci.png" alt="Crear ACI" width="50%">
 
 2. Configura **Basics**:
    - **RG:** `az104-rg9` | **Container name:** `az104-c1`
    - **Region:** East US | **Image source:** Quickstart images
    - **Image:** `mcr.microsoft.com/azuredocs/aci-helloworld:latest` (Linux)
 
-   ![Basics ACI](capturas/t1-paso-03-basics-aci.png)
+   <img src="capturas/t1-paso-03-basics-aci.png" alt="Basics ACI" width="50%">
 
 3. Pestaña **Networking**:
    - **DNS name label:** introduce un nombre único (será `<nombre>.eastus.azurecontainer.io`)
 
-   ![Networking DNS label](capturas/t1-paso-04-networking-dns-label.png)
+   <img src="capturas/t1-paso-04-networking-dns-label.png" alt="Networking DNS label" width="50%">
 
 4. Pestaña **Monitoring** → desactiva **Enable container instance logs**
 
-   ![Monitoring logs off](capturas/t1-paso-05-monitoring-logs-off.png)
+   <img src="capturas/t1-paso-05-monitoring-logs-off.png" alt="Monitoring logs off" width="50%">
 
 5. Pestaña **Advanced** → sin cambios
 
-   ![Advanced tab](capturas/t1-paso-06-advanced-tab.png)
+   <img src="capturas/t1-paso-06-advanced-tab.png" alt="Advanced tab" width="50%">
 
 6. **Review + Create** → **Create** → espera 2-3 minutos
 
@@ -148,16 +148,16 @@ Write-Host "URL: http://$dnsLabel.eastus.azurecontainer.io"
 
 1. **Go to resource** → verifica **Status: Running**
 
-   ![Ir al recurso](capturas/t2-paso-01-ir-al-recurso.png)
-   ![Container running](capturas/t2-paso-02-container-running.png)
+   <img src="capturas/t2-paso-01-ir-al-recurso.png" alt="Ir al recurso" width="50%">
+   <img src="capturas/t2-paso-02-container-running.png" alt="Container running" width="50%">
 
 2. Copia el **FQDN** → ábrelo en el navegador → verifica **Welcome to Azure Container Instance**
 
-   ![Welcome Azure ACI](capturas/t2-paso-03-welcome-azure-aci.png)
+   <img src="capturas/t2-paso-03-welcome-azure-aci.png" alt="Welcome Azure ACI" width="50%">
 
 3. **Settings → Containers → Logs** → verifica las entradas HTTP GET
 
-   ![Logs HTTP GET](capturas/t2-paso-04-logs-http-get.png)
+   <img src="capturas/t2-paso-04-logs-http-get.png" alt="Logs HTTP GET" width="50%">
 
 ### Método B — CLI
 
@@ -206,7 +206,7 @@ az container show --name "az104-c1" --resource-group "az104-rg9" --query "contai
 
 `az104-rg9` → **Eliminar grupo de recursos**
 
-![Limpieza](capturas/limpieza-eliminar-rg.png)
+<img src="capturas/limpieza-eliminar-rg.png" alt="Limpieza" width="50%">
 
 ### Método B — CLI
 

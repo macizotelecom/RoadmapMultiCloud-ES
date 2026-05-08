@@ -1,4 +1,4 @@
-# Lab 01 — Gestión de identidades en Microsoft Entra ID
+﻿# Lab 01 — Gestión de identidades en Microsoft Entra ID
 
 > Fase: F2 | Cert: AZ-104 | Lab: 01 | Tipo: base
 
@@ -96,7 +96,7 @@ Esta estructura es la base de RBAC que se aplica desde el Lab-02a en adelante.
 
 2. Busca y selecciona **Microsoft Entra ID** en la barra de búsqueda superior.
 
-   ![Microsoft Entra ID en el menú](capturas/tarea1-01-entra-id-menu.png)
+   <img src="capturas/tarea1-01-entra-id-menu.png" alt="Microsoft Entra ID en el menú" width="50%">
 
    > Un tenant es la instancia aislada de Entra ID de tu organización. Puedes tener
    > múltiples tenants (producción, dev, testing) y cambiar entre ellos con el botón **Switch**.
@@ -113,11 +113,11 @@ Esta estructura es la base de RBAC que se aplica desde el Lab-02a en adelante.
 
 1. En el panel **Manage**, selecciona **Users**.
 
-   ![Menú Usuarios en Entra ID](capturas/tarea1-02-usuarios-menu.png)
+   <img src="capturas/tarea1-02-usuarios-menu.png" alt="Menú Usuarios en Entra ID" width="50%">
 
 2. En el desplegable **New user**, selecciona **Create new user**.
 
-   ![Desplegable Nuevo Usuario](capturas/tarea1-03-nuevo-usuario.png)
+   <img src="capturas/tarea1-03-nuevo-usuario.png" alt="Desplegable Nuevo Usuario" width="50%">
 
 3. Pestaña **Basics**:
 
@@ -128,7 +128,7 @@ Esta estructura es la base de RBAC que se aplica desde el Lab-02a en adelante.
    | Auto-generate password | ✅ |
    | Account enabled | ✅ |
 
-   ![Configuración básica del usuario](capturas/tarea1-04-usuario-basics.png)
+   <img src="capturas/tarea1-04-usuario-basics.png" alt="Configuración básica del usuario" width="50%">
 
 4. Pestaña **Properties**:
 
@@ -141,15 +141,15 @@ Esta estructura es la base de RBAC que se aplica desde el Lab-02a en adelante.
    > `Usage location` es obligatorio para asignar licencias Microsoft 365 o Entra ID Premium.
    > Sin este campo, la asignación de licencias falla. Aparece con frecuencia en el examen.
 
-   ![Propiedades del usuario](capturas/tarea1-05-usuario-properties.png)
+   <img src="capturas/tarea1-05-usuario-properties.png" alt="Propiedades del usuario" width="50%">
 
 5. **Review + create** → **Create**.
 
-   ![Revisión del usuario](capturas/tarea1-06-usuario-review.png)
+   <img src="capturas/tarea1-06-usuario-review.png" alt="Revisión del usuario" width="50%">
 
 6. Refresca y confirma que `az104-user1` aparece en la lista.
 
-   ![Usuario creado correctamente](capturas/tarea1-07-usuario-creado.png)
+   <img src="capturas/tarea1-07-usuario-creado.png" alt="Usuario creado correctamente" width="50%">
 
 **Azure CLI**
 
@@ -203,7 +203,7 @@ New-MgUser `
 
 1. Desplegable **New user** → **Invite an external user**.
 
-   ![Invitar usuario externo](capturas/tarea1-08-invitar-externo.png)
+   <img src="capturas/tarea1-08-invitar-externo.png" alt="Invitar usuario externo" width="50%">
 
 2. Pestaña **Basics**, configura:
 
@@ -214,7 +214,7 @@ New-MgUser `
    | Send invite message | ✅ |
    | Message | `Welcome to Azure and our group project` |
 
-   ![Configuración básica del guest](capturas/tarea1-09-guest-basics.png)
+   <img src="capturas/tarea1-09-guest-basics.png" alt="Configuración básica del guest" width="50%">
 
 3. Pestaña **Properties**:
 
@@ -224,15 +224,15 @@ New-MgUser `
    | Department | `IT` |
    | Usage location | **United States** |
 
-   ![Propiedades del guest](capturas/tarea1-10-guest-properties.png)
+   <img src="capturas/tarea1-10-guest-properties.png" alt="Propiedades del guest" width="50%">
 
 4. **Review + invite** → **Invite**.
 
-   ![Revisión de la invitación](capturas/tarea1-11-guest-review.png)
+   <img src="capturas/tarea1-11-guest-review.png" alt="Revisión de la invitación" width="50%">
 
 5. Refresca — el guest aparece con sufijo `#EXT#` en su UPN.
 
-   ![Guest creado con sufijo EXT](capturas/tarea1-12-guest-creado.png)
+   <img src="capturas/tarea1-12-guest-creado.png" alt="Guest creado con sufijo EXT" width="50%">
 
    > El sufijo `#EXT#` es cómo Entra ID transforma el email externo en un UPN interno:
    > `usuario_dominio.com#EXT#@<tu-tenant>.onmicrosoft.com`.
@@ -260,7 +260,7 @@ az ad invitation create \
 
 1. Entra ID → **Groups**.
 
-   ![Menú Grupos en Entra ID](capturas/tarea2-01-grupos-menu.png)
+   <img src="capturas/tarea2-01-grupos-menu.png" alt="Menú Grupos en Entra ID" width="50%">
 
 2. Explora el panel izquierdo:
    - **Expiration:** tiempo de vida del grupo en días. Al expirar, el owner debe renovarlo
@@ -292,23 +292,23 @@ az ad invitation create \
 
 3. **No members selected** → busca y añade `az104-user1` y el usuario guest.
 
-   ![Añadir miembros al grupo](capturas/tarea2-02-grupo-miembros.png)
+   <img src="capturas/tarea2-02-grupo-miembros.png" alt="Añadir miembros al grupo" width="50%">
 
 4. **No owners selected** → busca y selecciona tu cuenta → **Select**.
 
-   ![Asignar owner al grupo](capturas/tarea2-03-grupo-owners.png)
+   <img src="capturas/tarea2-03-grupo-owners.png" alt="Asignar owner al grupo" width="50%">
 
 5. **Review + create** → verifica la configuración.
 
-   ![Revisión del grupo](capturas/tarea2-04-grupo-review.png)
+   <img src="capturas/tarea2-04-grupo-review.png" alt="Revisión del grupo" width="50%">
 
 6. **Create**. Refresca y verifica que `IT Lab Administrators` existe.
 
-   ![Grupo creado correctamente](capturas/tarea2-05-grupo-creado.png)
+   <img src="capturas/tarea2-05-grupo-creado.png" alt="Grupo creado correctamente" width="50%">
 
 7. Selecciona el grupo → revisa **Members** y **Owners**.
 
-   ![Detalle del grupo con miembros](capturas/tarea2-06-grupo-detalle.png)
+   <img src="capturas/tarea2-06-grupo-detalle.png" alt="Detalle del grupo con miembros" width="50%">
 
 **Azure CLI**
 

@@ -1,4 +1,4 @@
-# Azure Container Apps — Lab 09c
+﻿# Azure Container Apps — Lab 09c
 
 > Fase: F2 | Cert: AZ-104 | Lab: 09c | Tipo: base
 
@@ -90,24 +90,24 @@ Una Container App accesible públicamente. A diferencia de ACI, el entorno de Co
 
 1. Portal → **Container Apps** → **+ Crear** → **Container App**
 
-   ![Buscar Container Apps](capturas/t1-paso-01-buscar-container-apps.png)
-   ![Crear Container App](capturas/t1-paso-02-crear-container-app.png)
+   <img src="capturas/t1-paso-01-buscar-container-apps.png" alt="Buscar Container Apps" width="50%">
+   <img src="capturas/t1-paso-02-crear-container-app.png" alt="Crear Container App" width="50%">
 
 2. Configura **Basics**:
    - **RG:** `az104-rg9` | **Name:** `my-app` | **Region:** East US
    - **Container Apps Environment:** **Create new** → nombre: `my-environment` → **Create**
 
-   ![Basics my-app](capturas/t1-paso-03-basics-my-app.png)
-   ![Crear environment](capturas/t1-paso-04-crear-environment.png)
+   <img src="capturas/t1-paso-03-basics-my-app.png" alt="Basics my-app" width="50%">
+   <img src="capturas/t1-paso-04-crear-environment.png" alt="Crear environment" width="50%">
 
 3. Pestaña **Container** → verifica **Use quickstart image** marcado
 
-   ![Quickstart image](capturas/t1-paso-05-quickstart-image.png)
+   <img src="capturas/t1-paso-05-quickstart-image.png" alt="Quickstart image" width="50%">
 
 4. **Review + create** → **Create** → espera 2-3 minutos
 
-   ![Review create](capturas/t1-paso-06-review-create.png)
-   ![Deployment completado](capturas/t1-paso-07-deployment-completado.png)
+   <img src="capturas/t1-paso-06-review-create.png" alt="Review create" width="50%">
+   <img src="capturas/t1-paso-07-deployment-completado.png" alt="Deployment completado" width="50%">
 
 ### Método B — CLI
 
@@ -144,11 +144,11 @@ az containerapp create `
 
 1. **Go to resource** → copia el **Application URL**
 
-   ![Application URL](capturas/t2-paso-01-application-url.png)
+   <img src="capturas/t2-paso-01-application-url.png" alt="Application URL" width="50%">
 
 2. Navega a la URL → verifica **Your Azure Container Apps app is live**
 
-   ![App live](capturas/t2-paso-02-app-live.png)
+   <img src="capturas/t2-paso-02-app-live.png" alt="App live" width="50%">
 
 ### Método B — CLI
 
@@ -182,7 +182,7 @@ Invoke-WebRequest -Uri "https://$url" -UseBasicParsing | Select-Object StatusCod
 
 `az104-rg9` → **Eliminar grupo de recursos**
 
-![Limpieza](capturas/limpieza-eliminar-rg.png)
+<img src="capturas/limpieza-eliminar-rg.png" alt="Limpieza" width="50%">
 
 ### Método B — CLI
 

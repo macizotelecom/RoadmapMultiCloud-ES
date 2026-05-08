@@ -1,4 +1,4 @@
-# ARM Templates y Bicep — Lab 03
+﻿# ARM Templates y Bicep — Lab 03
 
 > Fase: F2 | Cert: AZ-104 | Lab: 03 | Tipo: base
 
@@ -106,11 +106,11 @@ Cinco discos administrados, cada uno desplegado con un método diferente: portal
 
 1. Navega al portal → busca **Discos** → **+ Crear**
 
-   ![Buscar discos](capturas/t1-paso-01-buscar-discos.png)
+   <img src="capturas/t1-paso-01-buscar-discos.png" alt="Buscar discos" width="50%">
 
 2. Selecciona **Crear** en la página de Discos
 
-   ![Crear disco](capturas/t1-paso-02-crear-disco.png)
+   <img src="capturas/t1-paso-02-crear-disco.png" alt="Crear disco" width="50%">
 
 3. Configura el disco:
    - **Resource Group:** `az104-rg3` (crear nuevo si no existe)
@@ -120,19 +120,19 @@ Cinco discos administrados, cada uno desplegado con un método diferente: portal
    - **Source type:** None
    - **Performance:** Standard HDD → **Change size** → 32 GiB (S4)
 
-   ![Configurar disco](capturas/t1-paso-03-configurar-disco.png)
+   <img src="capturas/t1-paso-03-configurar-disco.png" alt="Configurar disco" width="50%">
 
 4. Selecciona **Revisar y crear** → **Crear** → cuando termine, **Ir al recurso**
 
-   ![Ir al recurso](capturas/t1-paso-04-ir-al-recurso.png)
+   <img src="capturas/t1-paso-04-ir-al-recurso.png" alt="Ir al recurso" width="50%">
 
 5. En el panel **Automatización** → **Exportar plantilla**
 
-   ![Exportar plantilla](capturas/t1-paso-05-exportar-plantilla.png)
+   <img src="capturas/t1-paso-05-exportar-plantilla.png" alt="Exportar plantilla" width="50%">
 
 6. Haz clic en **Descargar** — guarda `template.json` y `parameters.json` en tu equipo
 
-   ![Descargar template](capturas/t1-paso-06-descargar-template.png)
+   <img src="capturas/t1-paso-06-descargar-template.png" alt="Descargar template" width="50%">
 
 ### Método B — CLI
 
@@ -165,41 +165,41 @@ az group export --name "az104-rg3" --output json > template.json
 
 1. Portal → busca **Implementar una plantilla personalizada** → **Cree su propia plantilla en el editor**
 
-   ![Custom template](capturas/t2-paso-01-custom-template.png)
+   <img src="capturas/t2-paso-01-custom-template.png" alt="Custom template" width="50%">
 
 2. Observa las plantillas comunes disponibles
 
-   ![Plantillas comunes](capturas/t2-paso-02-plantillas-comunes.png)
+   <img src="capturas/t2-paso-02-plantillas-comunes.png" alt="Plantillas comunes" width="50%">
 
 3. **Cargar archivo** → selecciona `template.json`
 
-   ![Cargar template](capturas/t2-paso-03-cargar-template.png)
+   <img src="capturas/t2-paso-03-cargar-template.png" alt="Cargar template" width="50%">
 
 4. Edita el JSON — cambia `disks_az104_disk1_name` → `disk_name` y `az104-disk1` → `az104-disk2`
 
-   ![Editar template](capturas/t2-paso-04-editar-template.png)
+   <img src="capturas/t2-paso-04-editar-template.png" alt="Editar template" width="50%">
 
 5. **Guardar** → **Editar parámetros** → **Cargar archivo** → `parameters.json`
 
-   ![Cargar parameters](capturas/t2-paso-05-cargar-parameters.png)
+   <img src="capturas/t2-paso-05-cargar-parameters.png" alt="Cargar parameters" width="50%">
 
 6. Cambia `disks_az104_disk1_name` → `disk_name` en el JSON de parámetros
 
-   ![Editar parameters](capturas/t2-paso-06-editar-parameters.png)
+   <img src="capturas/t2-paso-06-editar-parameters.png" alt="Editar parameters" width="50%">
 
 7. Configura el despliegue:
    - **Resource group:** `az104-rg3`
    - **Disk_name:** `az104-disk2`
 
-   ![Deployment config](capturas/t2-paso-07-deployment-config.png)
+   <img src="capturas/t2-paso-07-deployment-config.png" alt="Deployment config" width="50%">
 
 8. **Revisar y crear** → **Crear** → verifica que `az104-disk2` existe
 
-   ![Disk2 creado](capturas/t2-paso-08-disk2-creado.png)
+   <img src="capturas/t2-paso-08-disk2-creado.png" alt="Disk2 creado" width="50%">
 
 9. En el RG debes ver ya dos discos
 
-   ![RG dos discos](capturas/t2-paso-09-rg-dos-discos.png)
+   <img src="capturas/t2-paso-09-rg-dos-discos.png" alt="RG dos discos" width="50%">
 
 ### Método B — CLI
 
@@ -228,25 +228,25 @@ az deployment group create `
 
 1. Abre Cloud Shell (icono `>_` arriba a la derecha) → selecciona **PowerShell**
 
-   ![Abrir Cloud Shell](capturas/t3-paso-01-abrir-cloudshell.png)
+   <img src="capturas/t3-paso-01-abrir-cloudshell.png" alt="Abrir Cloud Shell" width="50%">
 
 2. Si es la primera vez, configura almacenamiento. Luego: **Configuración** → **Ir a la versión clásica**
 
-   ![Versión clásica](capturas/t3-paso-02-version-clasica.png)
+   <img src="capturas/t3-paso-02-version-clasica.png" alt="Versión clásica" width="50%">
 
 3. **Cargar/Descargar archivos** → **Subir** → sube `template.json` y `parameters.json`
 
-   ![Subir archivos](capturas/t3-paso-03-subir-archivos.png)
+   <img src="capturas/t3-paso-03-subir-archivos.png" alt="Subir archivos" width="50%">
 
 4. **Editor** (`{}`) → navega a `template.json`
 
-   ![Editor template](capturas/t3-paso-04-editor-template.png)
+   <img src="capturas/t3-paso-04-editor-template.png" alt="Editor template" width="50%">
 
 5. Cambia el nombre del disco a `az104-disk3` → **Ctrl+S** para guardar → **Ctrl+Q** para cerrar
 
-   ![Editar disk3](capturas/t3-paso-05-editar-disk3.png)
+   <img src="capturas/t3-paso-05-editar-disk3.png" alt="Editar disk3" width="50%">
 
-   ![Guardar template](capturas/t3-paso-06-guardar-template.png)
+   <img src="capturas/t3-paso-06-guardar-template.png" alt="Guardar template" width="50%">
 
 6. Despliega con PowerShell:
 
@@ -259,7 +259,7 @@ New-AzResourceGroupDeployment `
 
 7. Verifica que el `ProvisioningState` sea **Succeeded**
 
-   ![Deployment succeeded](capturas/t3-paso-07-deployment-succeeded.png)
+   <img src="capturas/t3-paso-07-deployment-succeeded.png" alt="Deployment succeeded" width="50%">
 
 8. Lista los discos del RG:
 
@@ -267,7 +267,7 @@ New-AzResourceGroupDeployment `
 Get-AzDisk | ft Name, ResourceGroupName, Location, DiskSizeGb, ProvisioningState
 ```
 
-   ![Get-AzDisk lista](capturas/t3-paso-08-get-azdisk-lista.png)
+   <img src="capturas/t3-paso-08-get-azdisk-lista.png" alt="Get-AzDisk lista" width="50%">
 
 **Resultado esperado:**
 > El disco `az104-disk3` aparece en la lista con ProvisioningState `Succeeded`. En el RG tienes ya tres discos.
@@ -282,9 +282,9 @@ Get-AzDisk | ft Name, ResourceGroupName, Location, DiskSizeGb, ProvisioningState
 
 1. En Cloud Shell, cambia a **Bash**
 
-   ![Cambiar Bash](capturas/t4-paso-01-cambiar-bash.png)
+   <img src="capturas/t4-paso-01-cambiar-bash.png" alt="Cambiar Bash" width="50%">
 
-   ![Confirmar Bash](capturas/t4-paso-02-confirmar-bash.png)
+   <img src="capturas/t4-paso-02-confirmar-bash.png" alt="Confirmar Bash" width="50%">
 
 2. Verifica que los archivos están disponibles:
 
@@ -292,11 +292,11 @@ Get-AzDisk | ft Name, ResourceGroupName, Location, DiskSizeGb, ProvisioningState
 ls
 ```
 
-   ![ls archivos](capturas/t4-paso-03-ls-archivos.png)
+   <img src="capturas/t4-paso-03-ls-archivos.png" alt="ls archivos" width="50%">
 
 3. Edita `template.json` → cambia el disco a `az104-disk4` → **Ctrl+S** → **Ctrl+Q**
 
-   ![Editar disk4](capturas/t4-paso-04-editar-disk4.png)
+   <img src="capturas/t4-paso-04-editar-disk4.png" alt="Editar disk4" width="50%">
 
 4. Despliega con CLI:
 
@@ -307,7 +307,7 @@ az deployment group create \
   --parameters "parameters.json"
 ```
 
-   ![Deployment CLI](capturas/t4-paso-05-deployment-cli.png)
+   <img src="capturas/t4-paso-05-deployment-cli.png" alt="Deployment CLI" width="50%">
 
 5. Lista los discos:
 
@@ -315,7 +315,7 @@ az deployment group create \
 az disk list --resource-group "az104-rg3" --output table
 ```
 
-   ![Disk list CLI](capturas/t4-paso-06-disk-list-cli.png)
+   <img src="capturas/t4-paso-06-disk-list-cli.png" alt="Disk list CLI" width="50%">
 
 **Resultado esperado:**
 > El disco `az104-disk4` aparece en la lista. Tienes cuatro discos en el RG desplegados con cuatro métodos distintos.
@@ -330,18 +330,18 @@ az disk list --resource-group "az104-rg3" --output table
 
 1. Descarga el archivo Bicep del lab oficial o usa el del repositorio
 
-   ![Descargar Bicep](capturas/t5-paso-01-descargar-bicep.png)
+   <img src="capturas/t5-paso-01-descargar-bicep.png" alt="Descargar Bicep" width="50%">
 
 2. Sube el archivo `azuredeploydisk.bicep` a Cloud Shell
 
-   ![Subir Bicep](capturas/t5-paso-02-subir-bicep.png)
+   <img src="capturas/t5-paso-02-subir-bicep.png" alt="Subir Bicep" width="50%">
 
 3. Edita el archivo — cambia:
    - `managedDiskName` → `az104-disk5`
    - `diskSizeinGiB` → `32`
    - `sku name` → `StandardSSD_LRS`
 
-   ![Editar Bicep](capturas/t5-paso-03-editar-bicep.png)
+   <img src="capturas/t5-paso-03-editar-bicep.png" alt="Editar Bicep" width="50%">
 
 4. Despliega:
 
@@ -351,7 +351,7 @@ az deployment group create \
   --template-file "azuredeploydisk.bicep"
 ```
 
-   ![Deployment Bicep](capturas/t5-paso-04-deployment-bicep.png)
+   <img src="capturas/t5-paso-04-deployment-bicep.png" alt="Deployment Bicep" width="50%">
 
 5. Verifica los 5 discos:
 
@@ -359,7 +359,7 @@ az deployment group create \
 az disk list --resource-group "az104-rg3" --output table
 ```
 
-   ![Disk list final](capturas/t5-paso-05-disk-list-final.png)
+   <img src="capturas/t5-paso-05-disk-list-final.png" alt="Disk list final" width="50%">
 
 ### Método C — IaC (Bicep completo)
 
@@ -388,7 +388,7 @@ resource disk 'Microsoft.Compute/disks@2023-10-02' = {
 **Resultado esperado:**
 > El disco `az104-disk5` con SKU StandardSSD_LRS aparece en el RG. El resultado final muestra cinco discos, cada uno desplegado con un método distinto.
 
-![Resultado final 5 discos](capturas/resultado-final-5-discos.png)
+<img src="capturas/resultado-final-5-discos.png" alt="Resultado final 5 discos" width="50%">
 
 ---
 
@@ -443,7 +443,7 @@ The template deployment failed because of policy violation
 
 Navega al Resource Group `az104-rg3` → **Eliminar grupo de recursos** → confirma
 
-![Limpieza](capturas/limpieza-eliminar-rg.png)
+<img src="capturas/limpieza-eliminar-rg.png" alt="Limpieza" width="50%">
 
 ### Método B — CLI
 

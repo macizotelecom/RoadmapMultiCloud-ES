@@ -1,4 +1,4 @@
-# Azure Policy — Gobernanza y Cumplimiento — Lab 02b
+﻿# Azure Policy — Gobernanza y Cumplimiento — Lab 02b
 
 > Fase: F2 | Cert: AZ-104 | Lab: 02b | Tipo: base
 
@@ -114,33 +114,33 @@ Asignamos políticas a diferentes scopes para entender la jerarquía de herencia
 
 1. Navega a **portal.azure.com** → busca **Policy** en la barra superior
 
-   ![Captura paso 1](capturas/tarea1-paso-01-buscar-policy.png)
+   <img src="capturas/tarea1-paso-01-buscar-policy.png" alt="Captura paso 1" width="50%">
 
 2. En el menú lateral de Policy → **Assignments** → **+ Assign policy**
 
-   ![Captura paso 2](capturas/tarea1-paso-02-assign-policy.png)
+   <img src="capturas/tarea1-paso-02-assign-policy.png" alt="Captura paso 2" width="50%">
 
 3. En el campo **Scope** → haz clic en `...`:
    - Selecciona tu suscripción
    - Selecciona el Resource Group `rg-lab-02b-policy` (créalo si no existe)
    - Haz clic en **Select**
 
-   ![Captura paso 3](capturas/tarea1-paso-03-scope.png)
+   <img src="capturas/tarea1-paso-03-scope.png" alt="Captura paso 3" width="50%">
 
 4. En **Policy definition** → haz clic en `...` → busca `"Allowed locations"` → selecciónala
 
-   ![Captura paso 4](capturas/tarea1-paso-04-policy-definition.png)
+   <img src="capturas/tarea1-paso-04-policy-definition.png" alt="Captura paso 4" width="50%">
 
 5. En la pestaña **Parameters**:
    - **Allowed locations:** selecciona `East US` y `West Europe`
 
-   ![Captura paso 5](capturas/tarea1-paso-05-parametros.png)
+   <img src="capturas/tarea1-paso-05-parametros.png" alt="Captura paso 5" width="50%">
 
 6. En la pestaña **Remediation**: deja los valores por defecto (esta Policy es solo Audit/Deny, no necesita remediation task)
 
 7. Haz clic en **Review + create** → **Create**
 
-   ![Captura paso 7](capturas/tarea1-paso-07-confirmar.png)
+   <img src="capturas/tarea1-paso-07-confirmar.png" alt="Captura paso 7" width="50%">
 
 ### Método B — CLI
 
@@ -211,22 +211,22 @@ resource policyAssignment 'Microsoft.Authorization/policyAssignments@2024-04-01'
 
 1. Navega a **Policy** → **Compliance** → selecciona la asignación `lab02b-allowed-locations`
 
-   ![Captura paso 1](capturas/tarea2-paso-01-compliance-dashboard.png)
+   <img src="capturas/tarea2-paso-01-compliance-dashboard.png" alt="Captura paso 1" width="50%">
 
 2. Observa el estado: **Compliant** (verde) si todos los recursos del RG están en las regiones permitidas, o **Non-compliant** (rojo) si hay recursos fuera de scope
 
-   ![Captura paso 2](capturas/tarea2-paso-02-estado-compliance.png)
+   <img src="capturas/tarea2-paso-02-estado-compliance.png" alt="Captura paso 2" width="50%">
 
 3. Intenta crear un Storage Account en el RG con región `West US` (no permitida):
    - Navega al RG → **+ Create** → **Storage account**
    - Selecciona región: `West US`
    - Al hacer **Review + create**, deberías ver un error de Policy
 
-   ![Captura paso 3](capturas/tarea2-paso-03-bloqueo-policy.png)
+   <img src="capturas/tarea2-paso-03-bloqueo-policy.png" alt="Captura paso 3" width="50%">
 
 4. Crea el mismo Storage Account con región `East US` (permitida) — debe funcionar
 
-   ![Captura paso 4](capturas/tarea2-paso-04-recurso-permitido.png)
+   <img src="capturas/tarea2-paso-04-recurso-permitido.png" alt="Captura paso 4" width="50%">
 
 ### Método B — CLI
 
@@ -271,7 +271,7 @@ az policy state list `
 
 1. Navega a **Policy** → **Definitions** → **+ Policy definition**
 
-   ![Captura paso 1](capturas/tarea3-paso-01-nueva-definition.png)
+   <img src="capturas/tarea3-paso-01-nueva-definition.png" alt="Captura paso 1" width="50%">
 
 2. Rellena:
    - **Definition location:** tu suscripción
@@ -281,18 +281,18 @@ az policy state list `
 
 3. En el campo **Policy rule**, pega el JSON de la regla (ver Método B para el JSON completo)
 
-   ![Captura paso 3](capturas/tarea3-paso-03-policy-rule.png)
+   <img src="capturas/tarea3-paso-03-policy-rule.png" alt="Captura paso 3" width="50%">
 
 4. Haz clic en **Save**
 
-   ![Captura paso 4](capturas/tarea3-paso-04-guardar.png)
+   <img src="capturas/tarea3-paso-04-guardar.png" alt="Captura paso 4" width="50%">
 
 5. Asigna la policy al scope de la suscripción con una **Remediation task** habilitada:
    - **Policy** → **Assignments** → **+ Assign policy** → selecciona `lab02b-require-environment-tag`
    - En la pestaña **Remediation**: activa **Create a remediation task**
    - Asegúrate de que el Managed Identity tiene permisos para modificar Resource Groups
 
-   ![Captura paso 5](capturas/tarea3-paso-05-remediation-task.png)
+   <img src="capturas/tarea3-paso-05-remediation-task.png" alt="Captura paso 5" width="50%">
 
 ### Método B — CLI
 
@@ -412,7 +412,7 @@ az policy remediation create `
 
 1. Navega a **Policy** → **Definitions** → **+ Initiative definition**
 
-   ![Captura paso 1](capturas/tarea4-paso-01-nueva-initiative.png)
+   <img src="capturas/tarea4-paso-01-nueva-initiative.png" alt="Captura paso 1" width="50%">
 
 2. Rellena:
    - **Name:** `lab02b-baseline-governance`
@@ -424,16 +424,16 @@ az policy remediation create `
    - `lab02b-require-environment-tag` (la que creamos en la Tarea 3)
    - `Audit VMs that do not use managed disks` (built-in, en modo Audit)
 
-   ![Captura paso 3](capturas/tarea4-paso-03-policies-initiative.png)
+   <img src="capturas/tarea4-paso-03-policies-initiative.png" alt="Captura paso 3" width="50%">
 
 4. En **Initiative parameters**, expón `listOfAllowedLocations` como parámetro de la Initiative  
    (para poder configurarlo al asignar sin editar la Initiative)
 
-   ![Captura paso 4](capturas/tarea4-paso-04-parameters.png)
+   <img src="capturas/tarea4-paso-04-parameters.png" alt="Captura paso 4" width="50%">
 
 5. Haz clic en **Save** → asigna la Initiative a la suscripción desde **Assignments**
 
-   ![Captura paso 5](capturas/tarea4-paso-05-asignar-initiative.png)
+   <img src="capturas/tarea4-paso-05-asignar-initiative.png" alt="Captura paso 5" width="50%">
 
 ### Método B — CLI
 
@@ -666,7 +666,7 @@ Write-Host "Limpieza completada." -ForegroundColor Yellow
 
 **Captura del billing:**
 
-![Billing del lab](capturas/billing-lab-02b.png)
+<img src="capturas/billing-lab-02b.png" alt="Billing del lab" width="50%">
 
 **Fecha de ejecución:** [VERIFICAR COSTO — completar al ejecutar]  
 **Región:** East US  

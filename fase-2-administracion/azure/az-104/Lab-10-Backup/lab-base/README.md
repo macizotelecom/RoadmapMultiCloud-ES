@@ -1,4 +1,4 @@
-# Data Protection y Backup — Lab 10
+﻿# Data Protection y Backup — Lab 10
 
 > Fase: F2 | Cert: AZ-104 | Lab: 10 | Tipo: base
 
@@ -102,27 +102,27 @@ West US
 
 1. Descarga `az104-10-vms-edge-template.json` desde la web oficial del lab
 
-   ![Descarga lab10](capturas/t1-paso-01-descarga-lab10.png)
+   <img src="capturas/t1-paso-01-descarga-lab10.png" alt="Descarga lab10" width="50%">
 
 2. Portal → **Deploy a custom template** → **Build your own template**
 
-   ![Custom template](capturas/t1-paso-02-custom-template.png)
-   ![Build template](capturas/t1-paso-03-build-template.png)
+   <img src="capturas/t1-paso-02-custom-template.png" alt="Custom template" width="50%">
+   <img src="capturas/t1-paso-03-build-template.png" alt="Build template" width="50%">
 
 3. **Load file** → selecciona el template
 
-   ![Load file](capturas/t1-paso-04-load-file.png)
-   ![Seleccionar template](capturas/t1-paso-05-seleccionar-template.png)
+   <img src="capturas/t1-paso-04-load-file.png" alt="Load file" width="50%">
+   <img src="capturas/t1-paso-05-seleccionar-template.png" alt="Seleccionar template" width="50%">
 
 4. **Edit parameters** → carga el archivo de parámetros → configura password
 
-   ![Edit parameters](capturas/t1-paso-06-edit-parameters.png)
-   ![Parameters cargados](capturas/t1-paso-07-parameters-cargados.png)
+   <img src="capturas/t1-paso-06-edit-parameters.png" alt="Edit parameters" width="50%">
+   <img src="capturas/t1-paso-07-parameters-cargados.png" alt="Parameters cargados" width="50%">
 
 5. **RG:** `az104-rg-region1` | **Region:** East US | **Review + create** → **Create**
 
-   ![Deployment config](capturas/t1-paso-08-deployment-config.png)
-   ![Deployment completado](capturas/t1-paso-09-deployment-completado.png)
+   <img src="capturas/t1-paso-08-deployment-config.png" alt="Deployment config" width="50%">
+   <img src="capturas/t1-paso-09-deployment-completado.png" alt="Deployment completado" width="50%">
 
 **Resultado esperado:**
 > VM `az104-10-vm0` desplegada en `az104-rg-region1` con su VNet.
@@ -137,27 +137,27 @@ West US
 
 1. Portal → **Recovery Services vaults** → **+ Create**
 
-   ![Buscar RSV](capturas/t2-paso-01-buscar-rsv.png)
-   ![Crear RSV](capturas/t2-paso-02-crear-rsv.png)
+   <img src="capturas/t2-paso-01-buscar-rsv.png" alt="Buscar RSV" width="50%">
+   <img src="capturas/t2-paso-02-crear-rsv.png" alt="Crear RSV" width="50%">
 
 2. Configura:
    - **RG:** `az104-rg-region1` | **Name:** `az104-rsv-region1` | **Region:** East US
 
-   ![RSV basics](capturas/t2-paso-03-rsv-basics.png)
+   <img src="capturas/t2-paso-03-rsv-basics.png" alt="RSV basics" width="50%">
 
 3. **Go to resource** → **Settings → Properties**
 
-   ![RSV properties](capturas/t2-paso-04-rsv-properties.png)
+   <img src="capturas/t2-paso-04-rsv-properties.png" alt="RSV properties" width="50%">
 
 4. **Backup Configuration → Update** → verifica **Geo-redundant** y cierra
 
-   ![Backup configuration](capturas/t2-paso-05-backup-configuration.png)
-   ![Geo-redundant](capturas/t2-paso-06-geo-redundant.png)
+   <img src="capturas/t2-paso-05-backup-configuration.png" alt="Backup configuration" width="50%">
+   <img src="capturas/t2-paso-06-geo-redundant.png" alt="Geo-redundant" width="50%">
 
 5. **Security Settings → Soft Delete → Update** → verifica retención de **14 días**
 
-   ![Soft delete settings](capturas/t2-paso-07-soft-delete-settings.png)
-   ![14 días retención](capturas/t2-paso-08-14-dias-retencion.png)
+   <img src="capturas/t2-paso-07-soft-delete-settings.png" alt="Soft delete settings" width="50%">
+   <img src="capturas/t2-paso-08-14-dias-retencion.png" alt="14 días retención" width="50%">
 
 ### Método B — CLI
 
@@ -187,38 +187,38 @@ az backup vault backup-properties set `
 
 1. En el RSV → **Overview → + Backup**
 
-   ![Backup overview](capturas/t3-paso-01-backup-overview.png)
+   <img src="capturas/t3-paso-01-backup-overview.png" alt="Backup overview" width="50%">
 
 2. **Where is your workload:** Azure | **What to backup:** Virtual machine → **Backup**
 
-   ![Backup goal](capturas/t3-paso-02-backup-goal.png)
+   <img src="capturas/t3-paso-02-backup-goal.png" alt="Backup goal" width="50%">
 
 3. **Policy subtype:** Standard → **Create a new policy**:
    - **Name:** `az104-backup` | **Frequency:** Daily | **Time:** 12:00 AM
    - **Retain instant recovery snapshot:** 2 días
 
-   ![Policy type](capturas/t3-paso-03-policy-type.png)
-   ![Nueva política](capturas/t3-paso-04-nueva-politica.png)
+   <img src="capturas/t3-paso-03-policy-type.png" alt="Policy type" width="50%">
+   <img src="capturas/t3-paso-04-nueva-politica.png" alt="Nueva política" width="50%">
 
 4. **Virtual Machines → + Add** → selecciona `az104-10-vm0` → **OK**
 
-   ![Agregar VM](capturas/t3-paso-05-agregar-vm.png)
-   ![Seleccionar VM](capturas/t3-paso-06-seleccionar-vm.png)
+   <img src="capturas/t3-paso-05-agregar-vm.png" alt="Agregar VM" width="50%">
+   <img src="capturas/t3-paso-06-seleccionar-vm.png" alt="Seleccionar VM" width="50%">
 
 5. **Enable backup** → espera ~2 minutos
 
-   ![Habilitar backup](capturas/t3-paso-07-habilitar-backup.png)
-   ![Backup habilitado](capturas/t3-paso-08-backup-items.png)
+   <img src="capturas/t3-paso-07-habilitar-backup.png" alt="Habilitar backup" width="50%">
+   <img src="capturas/t3-paso-08-backup-items.png" alt="Backup habilitado" width="50%">
 
 6. **Protected items → Backup items → Azure Virtual Machine**
 
-   ![Azure VM backup](capturas/t3-paso-09-azure-vm-backup.png)
-   ![VM0 detalle](capturas/t3-paso-10-vm0-detalle.png)
+   <img src="capturas/t3-paso-09-azure-vm-backup.png" alt="Azure VM backup" width="50%">
+   <img src="capturas/t3-paso-10-vm0-detalle.png" alt="VM0 detalle" width="50%">
 
 7. **Backup now** → acepta fecha predeterminada → **OK**
 
-   ![Backup now](capturas/t3-paso-11-backup-now.png)
-   ![Confirmar backup](capturas/t3-paso-12-confirmar-backup.png)
+   <img src="capturas/t3-paso-11-backup-now.png" alt="Backup now" width="50%">
+   <img src="capturas/t3-paso-12-confirmar-backup.png" alt="Confirmar backup" width="50%">
 
 **Resultado esperado:**
 > La VM `az104-10-vm0` aparece en **Backup Items** con el primer backup en estado Initial Backup.
@@ -233,31 +233,31 @@ az backup vault backup-properties set `
 
 1. Portal → **Storage accounts** → **+ Create** en `az104-rg-region1`
 
-   ![Buscar Storage accounts](capturas/t4-paso-01-buscar-storage-accounts.png)
-   ![Crear storage](capturas/t4-paso-02-crear-storage.png)
-   ![Storage config](capturas/t4-paso-03-storage-config.png)
+   <img src="capturas/t4-paso-01-buscar-storage-accounts.png" alt="Buscar Storage accounts" width="50%">
+   <img src="capturas/t4-paso-02-crear-storage.png" alt="Crear storage" width="50%">
+   <img src="capturas/t4-paso-03-storage-config.png" alt="Storage config" width="50%">
 
 2. Vuelve al RSV → **Monitoring → Diagnostic Settings** → **+ Add diagnostic setting**
 
-   ![Diagnostic settings](capturas/t4-paso-04-diagnostic-settings.png)
-   ![Add diagnostic](capturas/t4-paso-05-add-diagnostic.png)
+   <img src="capturas/t4-paso-04-diagnostic-settings.png" alt="Diagnostic settings" width="50%">
+   <img src="capturas/t4-paso-05-add-diagnostic.png" alt="Add diagnostic" width="50%">
 
 3. Nombre: `Logs and Metrics to storage`
 
-   ![Nombre diagnostic](capturas/t4-paso-06-nombre-diagnostic.png)
+   <img src="capturas/t4-paso-06-nombre-diagnostic.png" alt="Nombre diagnostic" width="50%">
 
 4. Marca las categorías:
    - Azure Backup Reporting Data, Addon Azure Backup Job Data, Addon Azure Backup Alert Data
    - Azure Site Recovery Jobs, Azure Site Recovery Events
    - **Destination:** Archive to a storage account → selecciona la Storage Account creada
 
-   ![Categorías logs](capturas/t4-paso-07-categorias-logs.png)
+   <img src="capturas/t4-paso-07-categorias-logs.png" alt="Categorías logs" width="50%">
 
 5. **Save** → **Monitoring → Backup jobs** → verifica el job de `az104-10-vm0`
 
-   ![Backup jobs menú](capturas/t4-paso-08-backup-jobs-menu.png)
-   ![Job vm0](capturas/t4-paso-09-job-vm0.png)
-   ![Detalle job](capturas/t4-paso-10-detalle-job.png)
+   <img src="capturas/t4-paso-08-backup-jobs-menu.png" alt="Backup jobs menú" width="50%">
+   <img src="capturas/t4-paso-09-job-vm0.png" alt="Job vm0" width="50%">
+   <img src="capturas/t4-paso-10-detalle-job.png" alt="Detalle job" width="50%">
 
 **Resultado esperado:**
 > Diagnostic settings configurado. Los jobs de backup son visibles en el panel de monitoreo.
@@ -273,42 +273,42 @@ az backup vault backup-properties set `
 1. Portal → **Recovery Services vaults** → **+ Create** en **West US**:
    - **RG:** `az104-rg-region2` | **Name:** `az104-rsv-region2`
 
-   ![Crear RSV region2](capturas/t5-paso-01-crear-rsv-region2.png)
-   ![RSV region2 basics](capturas/t5-paso-02-rsv-region2-basics.png)
+   <img src="capturas/t5-paso-01-crear-rsv-region2.png" alt="Crear RSV region2" width="50%">
+   <img src="capturas/t5-paso-02-rsv-region2-basics.png" alt="RSV region2 basics" width="50%">
 
 2. Portal → busca `az104-10-vm0`
 
-   ![Buscar VM0](capturas/t5-paso-03-buscar-vm0.png)
+   <img src="capturas/t5-paso-03-buscar-vm0.png" alt="Buscar VM0" width="50%">
 
 3. **Backup + Disaster recovery → Disaster recovery**
 
-   ![Disaster recovery menú](capturas/t5-paso-04-disaster-recovery-menu.png)
+   <img src="capturas/t5-paso-04-disaster-recovery-menu.png" alt="Disaster recovery menú" width="50%">
 
 4. **Basics** → verifica la **Target region:** West US
 
-   ![Target region](capturas/t5-paso-05-target-region.png)
+   <img src="capturas/t5-paso-05-target-region.png" alt="Target region" width="50%">
 
 5. **Advanced settings** → revisa las opciones
 
-   ![Advanced settings](capturas/t5-paso-06-advanced-settings.png)
+   <img src="capturas/t5-paso-06-advanced-settings.png" alt="Advanced settings" width="50%">
 
 6. **Review + Start replication** → **Enable replication**
 
-   ![Enable replication](capturas/t5-paso-07-enable-replication.png)
-   ![Replication iniciada](capturas/t5-paso-08-replication-iniciada.png)
+   <img src="capturas/t5-paso-07-enable-replication.png" alt="Enable replication" width="50%">
+   <img src="capturas/t5-paso-08-replication-iniciada.png" alt="Replication iniciada" width="50%">
 
 > ⏱️ La replicación inicial tarda 10-15 minutos. Continúa mientras se completa.
 
 7. Navega a `az104-rsv-region2` → **Protected items → Replicated items**
 
-   ![RSV region2 overview](capturas/t5-paso-09-rsv-region2-overview.png)
-   ![Replicated items](capturas/t5-paso-10-replicated-items.png)
+   <img src="capturas/t5-paso-09-rsv-region2-overview.png" alt="RSV region2 overview" width="50%">
+   <img src="capturas/t5-paso-10-replicated-items.png" alt="Replicated items" width="50%">
 
 8. Verifica estado **Healthy** y synchronization progress
 
-   ![VM healthy](capturas/t5-paso-11-vm-healthy.png)
-   ![Replication progress](capturas/t5-paso-12-replication-progress.png)
-   ![VM details](capturas/t5-paso-13-vm-details.png)
+   <img src="capturas/t5-paso-11-vm-healthy.png" alt="VM healthy" width="50%">
+   <img src="capturas/t5-paso-12-replication-progress.png" alt="Replication progress" width="50%">
+   <img src="capturas/t5-paso-13-vm-details.png" alt="VM details" width="50%">
 
 **Resultado esperado:**
 > La VM `az104-10-vm0` aparece en el RSV de West US con estado **Protected** y synchronization completada.

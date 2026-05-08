@@ -1,4 +1,4 @@
-# Virtual Networking — Lab 04
+﻿# Virtual Networking — Lab 04
 
 > Fase: F2 | Cert: AZ-104 | Lab: 04 | Tipo: base
 
@@ -113,47 +113,47 @@ Dos redes virtuales con subredes segmentadas por función, un sistema de segurid
 
 1. Portal → busca **Redes Virtuales** → **+ Crear**
 
-   ![Buscar VNets](capturas/t1-paso-01-buscar-vnets.png)
+   <img src="capturas/t1-paso-01-buscar-vnets.png" alt="Buscar VNets" width="50%">
 
 2. Selecciona **Crear**
 
-   ![Crear VNet](capturas/t1-paso-02-crear-vnet.png)
+   <img src="capturas/t1-paso-02-crear-vnet.png" alt="Crear VNet" width="50%">
 
 3. Configura los datos básicos de `CoreServicesVnet`:
    - **Resource Group:** `az104-rg4`
    - **Name:** `CoreServicesVnet`
    - **Region:** `East US`
 
-   ![Basics CoreServicesVnet](capturas/t1-paso-03-basics-coreservicesvnet.png)
+   <img src="capturas/t1-paso-03-basics-coreservicesvnet.png" alt="Basics CoreServicesVnet" width="50%">
 
 4. Pestaña **Address Space** → reemplaza con `10.20.0.0/16`
 
-   ![Address space](capturas/t1-paso-04-address-space.png)
+   <img src="capturas/t1-paso-04-address-space.png" alt="Address space" width="50%">
 
 5. Agrega las subredes:
    - `SharedServicesSubnet` → `10.20.10.0/24`
    - `DatabaseSubnet` → `10.20.20.0/24`
 
-   ![Crear subnet Shared](capturas/t1-paso-05-crear-subnet-shared.png)
-   ![Crear subnet Database](capturas/t1-paso-06-crear-subnet-database.png)
+   <img src="capturas/t1-paso-05-crear-subnet-shared.png" alt="Crear subnet Shared" width="50%">
+   <img src="capturas/t1-paso-06-crear-subnet-database.png" alt="Crear subnet Database" width="50%">
 
 6. **Revisar y crear**
 
-   ![Review create](capturas/t1-paso-07-review-create.png)
+   <img src="capturas/t1-paso-07-review-create.png" alt="Review create" width="50%">
 
 7. Validación correcta → **Crear**
 
-   ![Validación ok](capturas/t1-paso-08-validacion-ok.png)
+   <img src="capturas/t1-paso-08-validacion-ok.png" alt="Validación ok" width="50%">
 
 8. Deployment completado
 
-   ![Deployment ok](capturas/t1-paso-09-deployment-ok.png)
+   <img src="capturas/t1-paso-09-deployment-ok.png" alt="Deployment ok" width="50%">
 
 9. **Ir al recurso** → en **Automatización** → **Exportar plantilla** → **Descargar**
 
-   ![Ir al recurso](capturas/t1-paso-10-ir-al-recurso.png)
-   ![Exportar template](capturas/t1-paso-11-exportar-template.png)
-   ![Descargar template y params](capturas/t1-paso-12-descargar-template-params.png)
+   <img src="capturas/t1-paso-10-ir-al-recurso.png" alt="Ir al recurso" width="50%">
+   <img src="capturas/t1-paso-11-exportar-template.png" alt="Exportar template" width="50%">
+   <img src="capturas/t1-paso-12-descargar-template-params.png" alt="Descargar template y params" width="50%">
 
 ### Método B — CLI
 
@@ -192,46 +192,46 @@ az network vnet subnet create `
 
 1. Edita `template.json` — reemplaza `CoreServicesVnet` → `ManufacturingVnet` y `10.20.0.0` → `10.30.0.0`
 
-   ![Editar manufacturing](capturas/t2-paso-01-editar-manufacturing.png)
-   ![Editar address space](capturas/t2-paso-02-editar-address-space.png)
+   <img src="capturas/t2-paso-01-editar-manufacturing.png" alt="Editar manufacturing" width="50%">
+   <img src="capturas/t2-paso-02-editar-address-space.png" alt="Editar address space" width="50%">
 
 2. Renombra subredes: `SharedServicesSubnet` → `SensorSubnet1` con dirección `10.30.20.0/24`
 
-   ![Renombrar subnet1](capturas/t2-paso-03-renombrar-subnet1.png)
-   ![Subnet1 address](capturas/t2-paso-04-subnet1-address.png)
+   <img src="capturas/t2-paso-03-renombrar-subnet1.png" alt="Renombrar subnet1" width="50%">
+   <img src="capturas/t2-paso-04-subnet1-address.png" alt="Subnet1 address" width="50%">
 
 3. `DatabaseSubnet` → `SensorSubnet2` con dirección `10.30.21.0/24`
 
-   ![Renombrar subnet2](capturas/t2-paso-05-renombrar-subnet2.png)
-   ![Subnet2 address](capturas/t2-paso-06-subnet2-address.png)
+   <img src="capturas/t2-paso-05-renombrar-subnet2.png" alt="Renombrar subnet2" width="50%">
+   <img src="capturas/t2-paso-06-subnet2-address.png" alt="Subnet2 address" width="50%">
 
 4. Edita `parameters.json` → reemplaza `CoreServicesVnet` → `ManufacturingVnet`
 
-   ![Editar parameters](capturas/t2-paso-07-editar-parameters.png)
+   <img src="capturas/t2-paso-07-editar-parameters.png" alt="Editar parameters" width="50%">
 
 5. Portal → **Implementar una plantilla personalizada** → **Cree su propia plantilla**
 
-   ![Custom template](capturas/t2-paso-08-custom-template.png)
+   <img src="capturas/t2-paso-08-custom-template.png" alt="Custom template" width="50%">
 
 6. Carga y guarda el `template.json` editado
 
-   ![Cargar template](capturas/t2-paso-09-cargar-template.png)
-   ![Template guardado](capturas/t2-paso-10-template-guardado.png)
+   <img src="capturas/t2-paso-09-cargar-template.png" alt="Cargar template" width="50%">
+   <img src="capturas/t2-paso-10-template-guardado.png" alt="Template guardado" width="50%">
 
 7. **Editar parámetros** → carga `parameters.json`
 
-   ![Editar parameters portal](capturas/t2-paso-11-editar-parameters.png)
-   ![Parameters cargados](capturas/t2-paso-12-parameters-cargados.png)
+   <img src="capturas/t2-paso-11-editar-parameters.png" alt="Editar parameters portal" width="50%">
+   <img src="capturas/t2-paso-12-parameters-cargados.png" alt="Parameters cargados" width="50%">
 
 8. **Review + create** → **Create**
 
-   ![Review create](capturas/t2-paso-13-review-create.png)
-   ![Deployment iniciado](capturas/t2-paso-14-deployment-iniciado.png)
+   <img src="capturas/t2-paso-13-review-create.png" alt="Review create" width="50%">
+   <img src="capturas/t2-paso-14-deployment-iniciado.png" alt="Deployment iniciado" width="50%">
 
 9. Verifica que `ManufacturingVnet` está creada con sus subredes
 
-   ![Manufacturing creada](capturas/t2-paso-15-manufacturing-creada.png)
-   ![Subnets manufacturing](capturas/t2-paso-16-subnets-manufacturing.png)
+   <img src="capturas/t2-paso-15-manufacturing-creada.png" alt="Manufacturing creada" width="50%">
+   <img src="capturas/t2-paso-16-subnets-manufacturing.png" alt="Subnets manufacturing" width="50%">
 
 **Resultado esperado:**
 > `ManufacturingVnet` (10.30.0.0/16) con `SensorSubnet1` y `SensorSubnet2` creadas correctamente.
@@ -246,41 +246,41 @@ az network vnet subnet create `
 
 1. Portal → busca **Application security groups** → **+ Crear**
 
-   ![Buscar ASG](capturas/t3-paso-01-buscar-asg.png)
-   ![Crear ASG](capturas/t3-paso-02-crear-asg.png)
+   <img src="capturas/t3-paso-01-buscar-asg.png" alt="Buscar ASG" width="50%">
+   <img src="capturas/t3-paso-02-crear-asg.png" alt="Crear ASG" width="50%">
 
 2. Configura: **Name:** `asg-web` | **RG:** `az104-rg4` | **Region:** East US
 
-   ![ASG basics](capturas/t3-paso-03-asg-basics.png)
-   ![ASG creado](capturas/t3-paso-04-asg-creado.png)
+   <img src="capturas/t3-paso-03-asg-basics.png" alt="ASG basics" width="50%">
+   <img src="capturas/t3-paso-04-asg-creado.png" alt="ASG creado" width="50%">
 
 3. Portal → **Network security groups** → **+ Crear**
 
-   ![Buscar NSG](capturas/t3-paso-05-buscar-nsg.png)
-   ![NSG crear recurso](capturas/t3-paso-06-nsg-crear-recurso.png)
+   <img src="capturas/t3-paso-05-buscar-nsg.png" alt="Buscar NSG" width="50%">
+   <img src="capturas/t3-paso-06-nsg-crear-recurso.png" alt="NSG crear recurso" width="50%">
 
 4. Configura: **Name:** `myNSGSecure` | **RG:** `az104-rg4` | **Region:** East US
 
-   ![NSG basics](capturas/t3-paso-07-nsg-basics.png)
-   ![NSG review create](capturas/t3-paso-08-nsg-review-create.png)
+   <img src="capturas/t3-paso-07-nsg-basics.png" alt="NSG basics" width="50%">
+   <img src="capturas/t3-paso-08-nsg-review-create.png" alt="NSG review create" width="50%">
 
 5. Ir al recurso → **Configuración → Subredes** → **Asociar** → `CoreServicesVnet / SharedServicesSubnet`
 
-   ![NSG creado](capturas/t3-paso-09-nsg-creado.png)
-   ![NSG asociar subnet](capturas/t3-paso-10-nsg-asociar-subnet.png)
-   ![NSG subnet asociada](capturas/t3-paso-11-nsg-subnet-asociada.png)
+   <img src="capturas/t3-paso-09-nsg-creado.png" alt="NSG creado" width="50%">
+   <img src="capturas/t3-paso-10-nsg-asociar-subnet.png" alt="NSG asociar subnet" width="50%">
+   <img src="capturas/t3-paso-11-nsg-subnet-asociada.png" alt="NSG subnet asociada" width="50%">
 
 6. **Reglas de seguridad de entrada** → **+ Agregar** con:
    - Origen: Application security group → `asg-web`
    - Puertos destino: `80,443` | Protocolo: TCP | Acción: Allow | Prioridad: 100 | Nombre: `AllowASG`
 
-   ![Regla inbound ASG](capturas/t3-paso-12-regla-inbound-asg.png)
-   ![Regla inbound guardada](capturas/t3-paso-13-regla-inbound-guardada.png)
+   <img src="capturas/t3-paso-12-regla-inbound-asg.png" alt="Regla inbound ASG" width="50%">
+   <img src="capturas/t3-paso-13-regla-inbound-guardada.png" alt="Regla inbound guardada" width="50%">
 
 7. **Reglas de seguridad de salida** → **+ Agregar** con:
    - Destino: Service tag → Internet | Acción: Deny | Prioridad: 4096 | Nombre: `DenyInternetOutbound`
 
-   ![Regla outbound deny](capturas/t3-paso-14-regla-outbound-deny.png)
+   <img src="capturas/t3-paso-14-regla-outbound-deny.png" alt="Regla outbound deny" width="50%">
 
 ### Método B — CLI
 
@@ -341,24 +341,24 @@ az network nsg rule create `
 
 1. Portal → **Zona DNS** → **+ Crear**
 
-   ![Buscar zona DNS](capturas/t4-paso-01-buscar-zona-dns.png)
-   ![Crear zona DNS](capturas/t4-paso-02-crear-zona-dns.png)
+   <img src="capturas/t4-paso-01-buscar-zona-dns.png" alt="Buscar zona DNS" width="50%">
+   <img src="capturas/t4-paso-02-crear-zona-dns.png" alt="Crear zona DNS" width="50%">
 
 2. **Name:** `contoso.com` | **RG:** `az104-rg4`
 
-   ![DNS público basics](capturas/t4-paso-03-dns-publico-basics.png)
-   ![DNS público review](capturas/t4-paso-04-dns-publico-review.png)
+   <img src="capturas/t4-paso-03-dns-publico-basics.png" alt="DNS público basics" width="50%">
+   <img src="capturas/t4-paso-04-dns-publico-review.png" alt="DNS público review" width="50%">
 
 3. Zona creada — anota los 4 name servers
 
-   ![DNS público creado](capturas/t4-paso-05-dns-publico-creado.png)
-   ![Nameservers](capturas/t4-paso-06-nameservers.png)
+   <img src="capturas/t4-paso-05-dns-publico-creado.png" alt="DNS público creado" width="50%">
+   <img src="capturas/t4-paso-06-nameservers.png" alt="Nameservers" width="50%">
 
 4. **Administración de DNS → Registros** → **+ Agregar** un registro A:
    - **Name:** `www` | **Type:** A | **TTL:** 1 | **IP:** `10.1.1.4`
 
-   ![Registros DNS](capturas/t4-paso-07-registros-dns.png)
-   ![Agregar registro A](capturas/t4-paso-08-agregar-registro-a.png)
+   <img src="capturas/t4-paso-07-registros-dns.png" alt="Registros DNS" width="50%">
+   <img src="capturas/t4-paso-08-agregar-registro-a.png" alt="Agregar registro A" width="50%">
 
 5. Valida la resolución (usa uno de los name servers de la zona):
 
@@ -366,28 +366,28 @@ az network nsg rule create `
 nslookup www.contoso.com <name-server-de-la-zona>
 ```
 
-   ![nslookup resultado](capturas/t4-paso-09-nslookup-resultado.png)
+   <img src="capturas/t4-paso-09-nslookup-resultado.png" alt="nslookup resultado" width="50%">
 
 **DNS Privada:**
 
 6. Portal → **Zonas de DNS privado** → **+ Crear**
 
-   ![Buscar zona privada](capturas/t4-paso-10-buscar-zona-privada.png)
-   ![Crear zona privada](capturas/t4-paso-11-crear-zona-privada.png)
+   <img src="capturas/t4-paso-10-buscar-zona-privada.png" alt="Buscar zona privada" width="50%">
+   <img src="capturas/t4-paso-11-crear-zona-privada.png" alt="Crear zona privada" width="50%">
 
 7. **Name:** `private.contoso.com` | **RG:** `az104-rg4`
 
-   ![DNS privado basics](capturas/t4-paso-12-dns-privado-basics.png)
-   ![DNS privado review](capturas/t4-paso-13-dns-privado-review.png)
-   ![DNS privado creado](capturas/t4-paso-14-dns-privado-creado.png)
+   <img src="capturas/t4-paso-12-dns-privado-basics.png" alt="DNS privado basics" width="50%">
+   <img src="capturas/t4-paso-13-dns-privado-review.png" alt="DNS privado review" width="50%">
+   <img src="capturas/t4-paso-14-dns-privado-creado.png" alt="DNS privado creado" width="50%">
 
 8. **Administración DNS → Vínculos de virtual network** → vincula `ManufacturingVnet`
 
-   ![VNet link](capturas/t4-paso-15-vnet-link.png)
+   <img src="capturas/t4-paso-15-vnet-link.png" alt="VNet link" width="50%">
 
 9. Agrega registro A: `sensorvm` → `10.1.1.4`
 
-   ![Registro sensorvm](capturas/t4-paso-16-registro-sensorvm.png)
+   <img src="capturas/t4-paso-16-registro-sensorvm.png" alt="Registro sensorvm" width="50%">
 
 ### Método B — CLI
 
@@ -429,7 +429,7 @@ az network private-dns record-set a add-record `
 **Resultado esperado:**
 > La zona `contoso.com` tiene un registro A `www → 10.1.1.4` validado con nslookup. La zona `private.contoso.com` está vinculada a `ManufacturingVnet` con el registro `sensorvm`.
 
-![Resultado final arquitectura](capturas/resultado-final-arquitectura.png)
+<img src="capturas/resultado-final-arquitectura.png" alt="Resultado final arquitectura" width="50%">
 
 ---
 
@@ -468,7 +468,7 @@ az network private-dns link vnet show `
 
 Navega a `az104-rg4` → **Eliminar grupo de recursos**
 
-![Limpieza](capturas/limpieza-eliminar-rg.png)
+<img src="capturas/limpieza-eliminar-rg.png" alt="Limpieza" width="50%">
 
 ### Método B — CLI
 

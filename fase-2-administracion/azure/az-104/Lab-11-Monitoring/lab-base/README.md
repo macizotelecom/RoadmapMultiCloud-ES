@@ -1,4 +1,4 @@
-# Azure Monitor y Alertas — Lab 11
+﻿# Azure Monitor y Alertas — Lab 11
 
 > Fase: F2 | Cert: AZ-104 | Lab: 11 | Tipo: base
 
@@ -108,31 +108,31 @@ Azure Monitor
 
 1. Descarga `az104-11-vm-template.json` desde la web oficial del lab
 
-   ![Descarga lab11](capturas/t1-paso-01-descarga-lab11.png)
+   <img src="capturas/t1-paso-01-descarga-lab11.png" alt="Descarga lab11" width="50%">
 
 2. Portal → **Deploy a custom template** → **Build your own template**
 
-   ![Custom template](capturas/t1-paso-02-custom-template.png)
-   ![Build template](capturas/t1-paso-03-build-template.png)
-   ![Load file](capturas/t1-paso-04-load-file.png)
+   <img src="capturas/t1-paso-02-custom-template.png" alt="Custom template" width="50%">
+   <img src="capturas/t1-paso-03-build-template.png" alt="Build template" width="50%">
+   <img src="capturas/t1-paso-04-load-file.png" alt="Load file" width="50%">
 
 3. Configura: **RG:** `az104-rg11` | **Region:** East US | contraseña → **Create**
 
-   ![Deployment config](capturas/t1-paso-05-deployment-config.png)
-   ![Recursos rg11](capturas/t1-paso-06-recursos-rg11.png)
-   ![VM desplegada](capturas/t1-paso-07-vm-desplegada.png)
+   <img src="capturas/t1-paso-05-deployment-config.png" alt="Deployment config" width="50%">
+   <img src="capturas/t1-paso-06-recursos-rg11.png" alt="Recursos rg11" width="50%">
+   <img src="capturas/t1-paso-07-vm-desplegada.png" alt="VM desplegada" width="50%">
 
 4. Portal → **Monitor** → **VM Insights** → **Configure Insights**
 
-   ![Buscar Monitor](capturas/t1-paso-08-buscar-monitor.png)
-   ![VM Insights](capturas/t1-paso-09-vm-insights.png)
-   ![Configure Insights](capturas/t1-paso-10-configure-insights.png)
+   <img src="capturas/t1-paso-08-buscar-monitor.png" alt="Buscar Monitor" width="50%">
+   <img src="capturas/t1-paso-09-vm-insights.png" alt="VM Insights" width="50%">
+   <img src="capturas/t1-paso-10-configure-insights.png" alt="Configure Insights" width="50%">
 
 5. **Enable** junto a `az104-11-vm0` → **Review + enable** → **Enable**
 
-   ![Enable VM](capturas/t1-paso-11-enable-vm.png)
-   ![Review enable](capturas/t1-paso-12-review-enable.png)
-   ![Insights habilitado](capturas/t1-paso-13-insights-habilitado.png)
+   <img src="capturas/t1-paso-11-enable-vm.png" alt="Enable VM" width="50%">
+   <img src="capturas/t1-paso-12-review-enable.png" alt="Review enable" width="50%">
+   <img src="capturas/t1-paso-13-insights-habilitado.png" alt="Insights habilitado" width="50%">
 
 > ⏱️ La instalación del agente tarda ~5 minutos.
 
@@ -149,24 +149,24 @@ Azure Monitor
 
 1. **Monitor → Alerts** → **+ Create → Alert rule**
 
-   ![Monitor alerts](capturas/t2-paso-01-monitor-alerts.png)
-   ![Create alert rule](capturas/t2-paso-02-create-alert-rule.png)
+   <img src="capturas/t2-paso-01-monitor-alerts.png" alt="Monitor alerts" width="50%">
+   <img src="capturas/t2-paso-02-create-alert-rule.png" alt="Create alert rule" width="50%">
 
 2. **Scope** → marca tu suscripción → **Apply**
 
-   ![Seleccionar suscripción](capturas/t2-paso-03-seleccionar-suscripcion.png)
+   <img src="capturas/t2-paso-03-seleccionar-suscripcion.png" alt="Seleccionar suscripción" width="50%">
 
 3. **Condition** → **See all signals**
 
-   ![See all signals](capturas/t2-paso-04-see-all-signals.png)
+   <img src="capturas/t2-paso-04-see-all-signals.png" alt="See all signals" width="50%">
 
 4. Busca y selecciona **Delete Virtual Machine (Virtual Machines)** → **Apply**
 
-   ![Delete VM signal](capturas/t2-paso-05-delete-vm-signal.png)
+   <img src="capturas/t2-paso-05-delete-vm-signal.png" alt="Delete VM signal" width="50%">
 
 5. En **Alert logic** → **Event level:** All selected | **Status:** All selected
 
-   ![Alert logic](capturas/t2-paso-06-alert-logic.png)
+   <img src="capturas/t2-paso-06-alert-logic.png" alt="Alert logic" width="50%">
 
 **Resultado esperado:**
 > Condición de alerta configurada. La ventana de creación permanece abierta para la siguiente tarea.
@@ -181,29 +181,29 @@ Azure Monitor
 
 1. Pestaña **Actions** → **Use action groups** → **+ Create action group**
 
-   ![Use action groups](capturas/t3-paso-01-use-action-groups.png)
-   ![Create action group](capturas/t3-paso-02-create-action-group.png)
+   <img src="capturas/t3-paso-01-use-action-groups.png" alt="Use action groups" width="50%">
+   <img src="capturas/t3-paso-02-create-action-group.png" alt="Create action group" width="50%">
 
 2. **Basics**:
    - **RG:** `az104-rg11` | **Name:** `Alert the operations team` | **Display:** `AlertOpsTeam`
 
 3. **Notifications** → **+ Email/SMS/Push/Voice** → introduce tu email → **OK**
 
-   ![Email notificación](capturas/t3-paso-03-email-notificacion.png)
+   <img src="capturas/t3-paso-03-email-notificacion.png" alt="Email notificación" width="50%">
 
 4. **Review + create** → **Create**
 
-   ![Action group review](capturas/t3-paso-04-action-group-review.png)
+   <img src="capturas/t3-paso-04-action-group-review.png" alt="Action group review" width="50%">
 
 5. De vuelta en la alerta → **Details**:
    - **Alert rule name:** `VM was deleted`
    - **Description:** `A VM in your resource group was deleted`
 
-   ![Alert details](capturas/t3-paso-05-alert-details.png)
+   <img src="capturas/t3-paso-05-alert-details.png" alt="Alert details" width="50%">
 
 6. **Review + create** → **Create**
 
-   ![Alert review create](capturas/t3-paso-06-alert-review-create.png)
+   <img src="capturas/t3-paso-06-alert-review-create.png" alt="Alert review create" width="50%">
 
 > 💡 Recibirás un email de bienvenida al Action Group confirmando que está operativo.
 
@@ -220,26 +220,26 @@ Azure Monitor
 
 1. Portal → **Virtual machines** → selecciona `az104-11-vm0`
 
-   ![Buscar VMs](capturas/t4-paso-01-buscar-vms.png)
-   ![Seleccionar vm0](capturas/t4-paso-02-seleccionar-vm0.png)
+   <img src="capturas/t4-paso-01-buscar-vms.png" alt="Buscar VMs" width="50%">
+   <img src="capturas/t4-paso-02-seleccionar-vm0.png" alt="Seleccionar vm0" width="50%">
 
 2. **Delete** → marca **Apply force delete** → confirma y elimina
 
-   ![Delete VM](capturas/t4-paso-03-delete-vm.png)
+   <img src="capturas/t4-paso-03-delete-vm.png" alt="Delete VM" width="50%">
 
 3. Monitorea la notificación de eliminación completada
 
-   ![Notificación VM deleted](capturas/t4-paso-04-notificacion-vm-deleted.png)
+   <img src="capturas/t4-paso-04-notificacion-vm-deleted.png" alt="Notificación VM deleted" width="50%">
 
 4. Revisa el email del Action Group
 
-   ![Email action group](capturas/t4-paso-05-email-action-group.png)
-   ![Email alerta recibido](capturas/t4-paso-06-email-alerta-recibido.png)
+   <img src="capturas/t4-paso-05-email-action-group.png" alt="Email action group" width="50%">
+   <img src="capturas/t4-paso-06-email-alerta-recibido.png" alt="Email alerta recibido" width="50%">
 
 5. **Monitor → Alerts** → verifica las alertas generadas
 
-   ![Alertas generadas](capturas/t4-paso-07-alertas-generadas.png)
-   ![Alert details](capturas/t4-paso-08-alert-details.png)
+   <img src="capturas/t4-paso-07-alertas-generadas.png" alt="Alertas generadas" width="50%">
+   <img src="capturas/t4-paso-08-alert-details.png" alt="Alert details" width="50%">
 
 **Resultado esperado:**
 > Recibes un email con asunto "Azure Monitor alert VM was deleted was activated". En el portal aparecen 3 alertas relacionadas con la eliminación de la VM.
@@ -254,15 +254,15 @@ Azure Monitor
 
 1. **Monitor → Alerts → Alert processing rules** → **+ Create**
 
-   ![Alert processing rules](capturas/t5-paso-01-alert-processing-rules.png)
+   <img src="capturas/t5-paso-01-alert-processing-rules.png" alt="Alert processing rules" width="50%">
 
 2. **Scope** → selecciona tu suscripción → **Apply**
 
-   ![Seleccionar suscripción](capturas/t5-paso-02-seleccionar-suscripcion.png)
+   <img src="capturas/t5-paso-02-seleccionar-suscripcion.png" alt="Seleccionar suscripción" width="50%">
 
 3. **Rule settings** → **Suppress notifications**
 
-   ![Suppress notifications](capturas/t5-paso-03-suppress-notifications.png)
+   <img src="capturas/t5-paso-03-suppress-notifications.png" alt="Suppress notifications" width="50%">
 
 4. **Scheduling** → **At a specific time**:
    - **Start:** hoy a las 10 PM | **End:** mañana a las 7 AM | **Timezone:** tu zona horaria
@@ -271,11 +271,11 @@ Azure Monitor
    - **RG:** `az104-rg11` | **Name:** `Planned Maintenance`
    - **Description:** `Suppress notifications during planned maintenance`
 
-   ![Rule details](capturas/t5-paso-04-rule-details.png)
+   <img src="capturas/t5-paso-04-rule-details.png" alt="Rule details" width="50%">
 
 6. **Review + create** → **Create**
 
-   ![Rule review](capturas/t5-paso-05-rule-review.png)
+   <img src="capturas/t5-paso-05-rule-review.png" alt="Rule review" width="50%">
 
 **Resultado esperado:**
 > Regla de supresión creada. Durante la ventana configurada, las alertas se registran pero no envían notificaciones.
@@ -290,12 +290,12 @@ Azure Monitor
 
 1. **Monitor → Logs** → cierra el splash screen si aparece
 
-   ![Monitor logs](capturas/t6-paso-01-monitor-logs.png)
-   ![Cerrar splash](capturas/t6-paso-02-cerrar-splash.png)
+   <img src="capturas/t6-paso-01-monitor-logs.png" alt="Monitor logs" width="50%">
+   <img src="capturas/t6-paso-02-cerrar-splash.png" alt="Cerrar splash" width="50%">
 
 2. Si es necesario, selecciona el **Scope** de tu suscripción
 
-   ![Seleccionar scope](capturas/t6-paso-03-seleccionar-scope.png)
+   <img src="capturas/t6-paso-03-seleccionar-scope.png" alt="Seleccionar scope" width="50%">
 
 3. Pega y ejecuta la consulta KQL:
 
@@ -307,8 +307,8 @@ InsightsMetrics
 | render timechart
 ```
 
-   ![KQL query](capturas/t6-paso-04-kql-query.png)
-   ![Gráfico CPU](capturas/t6-paso-05-grafico-cpu.png)
+   <img src="capturas/t6-paso-04-kql-query.png" alt="KQL query" width="50%">
+   <img src="capturas/t6-paso-05-grafico-cpu.png" alt="Gráfico CPU" width="50%">
 
 > Si los datos de VM Insights no han llegado todavía (requiere ~15-30 min), el gráfico aparecerá vacío — esto es normal.
 
@@ -360,7 +360,7 @@ AzureActivity
 
 `az104-rg11` → **Eliminar grupo de recursos**
 
-![Limpieza](capturas/limpieza-eliminar-rg.png)
+<img src="capturas/limpieza-eliminar-rg.png" alt="Limpieza" width="50%">
 
 ### Método B — CLI
 

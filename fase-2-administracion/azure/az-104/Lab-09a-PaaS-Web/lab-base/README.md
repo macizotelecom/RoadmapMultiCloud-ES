@@ -1,4 +1,4 @@
-# Web Apps PaaS — Lab 09a
+﻿# Web Apps PaaS — Lab 09a
 
 > Fase: F2 | Cert: AZ-104 | Lab: 09a | Tipo: base
 
@@ -99,9 +99,9 @@ App Service Plan: Premium V3 P1V3 (Central US)
 
 1. Portal → **App Services** → **+ Crear** → **Web App**
 
-   ![Buscar App Services](capturas/t1-paso-01-buscar-app-services.png)
-   ![App Services overview](capturas/t1-paso-02-app-services-overview.png)
-   ![Crear Web App](capturas/t1-paso-03-crear-web-app.png)
+   <img src="capturas/t1-paso-01-buscar-app-services.png" alt="Buscar App Services" width="50%">
+   <img src="capturas/t1-paso-02-app-services-overview.png" alt="App Services overview" width="50%">
+   <img src="capturas/t1-paso-03-crear-web-app.png" alt="Crear Web App" width="50%">
 
 2. Configura **Basics**:
    - **RG:** `az104-rg9` | **Name:** nombre único global
@@ -109,20 +109,20 @@ App Service Plan: Premium V3 P1V3 (Central US)
    - **Region:** East US (si hay error de cuota, usa Central US)
    - **Pricing plan:** Premium V3 P1V3
 
-   ![Basics WebApp](capturas/t1-paso-04-basics-webapp.png)
+   <img src="capturas/t1-paso-04-basics-webapp.png" alt="Basics WebApp" width="50%">
 
 3. Si hay error de cuota en la región:
 
-   ![Error cuota región](capturas/t1-paso-05-error-cuota-region.png)
-   ![Error detalle](capturas/t1-paso-06-error-detalle.png)
+   <img src="capturas/t1-paso-05-error-cuota-region.png" alt="Error cuota región" width="50%">
+   <img src="capturas/t1-paso-06-error-detalle.png" alt="Error detalle" width="50%">
 
 4. Cambia a **Central US** y vuelve a intentar
 
-   ![Cambiar región](capturas/t1-paso-07-cambiar-region.png)
+   <img src="capturas/t1-paso-07-cambiar-region.png" alt="Cambiar región" width="50%">
 
 5. **Review + create** → **Create** → **Go to resource**
 
-   ![WebApp desplegada](capturas/t1-paso-08-webapp-desplegada.png)
+   <img src="capturas/t1-paso-08-webapp-desplegada.png" alt="WebApp desplegada" width="50%">
 
 ### Método B — CLI
 
@@ -159,23 +159,23 @@ az webapp create `
 
 1. Desde la Web App → **Default domain** → verifica la página por defecto
 
-   ![Default domain](capturas/t2-paso-01-default-domain.png)
-   ![Página default](capturas/t2-paso-02-pagina-default.png)
+   <img src="capturas/t2-paso-01-default-domain.png" alt="Default domain" width="50%">
+   <img src="capturas/t2-paso-02-pagina-default.png" alt="Página default" width="50%">
 
 2. **Deployment → Deployment slots** → **+ Add slot**:
    - **Name:** `staging` | **Clone settings from:** Do not clone settings
 
-   ![Deployment slots menú](capturas/t2-paso-03-deployment-slots-menu.png)
-   ![Add slot staging](capturas/t2-paso-04-add-slot-staging.png)
-   ![Slot configurado](capturas/t2-paso-05-slot-configurado.png)
+   <img src="capturas/t2-paso-03-deployment-slots-menu.png" alt="Deployment slots menú" width="50%">
+   <img src="capturas/t2-paso-04-add-slot-staging.png" alt="Add slot staging" width="50%">
+   <img src="capturas/t2-paso-05-slot-configurado.png" alt="Slot configurado" width="50%">
 
 3. Refresca → verifica que aparecen **Production** y **Staging**
 
-   ![Slots lista](capturas/t2-paso-06-slots-lista.png)
+   <img src="capturas/t2-paso-06-slots-lista.png" alt="Slots lista" width="50%">
 
 4. Selecciona el slot **Staging** → verifica que tiene URL diferente a producción
 
-   ![Staging slot detalle](capturas/t2-paso-07-staging-slot-detalle.png)
+   <img src="capturas/t2-paso-07-staging-slot-detalle.png" alt="Staging slot detalle" width="50%">
 
 **Resultado esperado:**
 > Slot `staging` creado con URL `https://<nombre>-staging.azurewebsites.net`.
@@ -190,18 +190,18 @@ az webapp create `
 
 1. Desde el slot **Staging** → **Deployment Center** → **Settings**
 
-   ![Deployment Center](capturas/t3-paso-01-deployment-center.png)
+   <img src="capturas/t3-paso-01-deployment-center.png" alt="Deployment Center" width="50%">
 
 2. **Source:** External Git → configura:
    - **Repository:** `https://github.com/Azure-Samples/php-docs-hello-world`
    - **Branch:** `master`
    → **Save**
 
-   ![External Git config](capturas/t3-paso-02-external-git-config.png)
+   <img src="capturas/t3-paso-02-external-git-config.png" alt="External Git config" width="50%">
 
 3. Espera 1-2 minutos → navega al **Default domain** del slot staging → verifica **Hello World!**
 
-   ![Hello World staging](capturas/t3-paso-03-hello-world-staging.png)
+   <img src="capturas/t3-paso-03-hello-world-staging.png" alt="Hello World staging" width="50%">
 
 **Resultado esperado:**
 > El slot de staging muestra la aplicación "Hello World" desplegada desde GitHub, mientras producción sigue mostrando la página por defecto.
@@ -216,22 +216,22 @@ az webapp create `
 
 1. **Deployment slots** → **Swap**
 
-   ![Deployment slots swap](capturas/t4-paso-01-deployment-slots-swap.png)
+   <img src="capturas/t4-paso-01-deployment-slots-swap.png" alt="Deployment slots swap" width="50%">
 
 2. Revisa la configuración → **Start Swap**
 
-   ![Start swap](capturas/t4-paso-02-start-swap.png)
+   <img src="capturas/t4-paso-02-start-swap.png" alt="Start swap" width="50%">
 
 3. Espera la notificación de swap completado
 
-   ![Swap notificación](capturas/t4-paso-03-swap-notificacion.png)
-   ![Swap completado](capturas/t4-paso-04-swap-completado.png)
+   <img src="capturas/t4-paso-03-swap-notificacion.png" alt="Swap notificación" width="50%">
+   <img src="capturas/t4-paso-04-swap-completado.png" alt="Swap completado" width="50%">
 
 4. Navega a la URL de **producción** → debe mostrar Hello World
 
-   ![Buscar App Services](capturas/t4-paso-05-buscar-app-services.png)
-   ![Producción app](capturas/t4-paso-06-produccion-app.png)
-   ![Hello World producción](capturas/t4-paso-07-hello-world-produccion.png)
+   <img src="capturas/t4-paso-05-buscar-app-services.png" alt="Buscar App Services" width="50%">
+   <img src="capturas/t4-paso-06-produccion-app.png" alt="Producción app" width="50%">
+   <img src="capturas/t4-paso-07-hello-world-produccion.png" alt="Hello World producción" width="50%">
 
 **Resultado esperado:**
 > La URL de producción muestra ahora "Hello World!" — el código de staging está en producción.
@@ -246,34 +246,34 @@ az webapp create `
 
 1. **App Service plan → Scale out**
 
-   ![Scale out menú](capturas/t5-paso-01-scale-out-menu.png)
+   <img src="capturas/t5-paso-01-scale-out-menu.png" alt="Scale out menú" width="50%">
 
 2. **Scaling:** Automatic | **Maximum burst:** 2 → **Save**
 
-   ![Autoscale automatic](capturas/t5-paso-02-autoscale-automatic.png)
+   <img src="capturas/t5-paso-02-autoscale-automatic.png" alt="Autoscale automatic" width="50%">
 
 3. **Diagnose and solve problems** → **Load Test your App** → **Create Load Test**
 
-   ![Diagnose solve](capturas/t5-paso-03-diagnose-solve.png)
-   ![Create load test](capturas/t5-paso-04-create-load-test.png)
+   <img src="capturas/t5-paso-03-diagnose-solve.png" alt="Diagnose solve" width="50%">
+   <img src="capturas/t5-paso-04-create-load-test.png" alt="Create load test" width="50%">
 
 4. Nombre único → **Review + create** → **Create** → **Go to resource**
 
-   ![Nuevo load test](capturas/t5-paso-05-nuevo-load-test.png)
-   ![Review create](capturas/t5-paso-06-review-create.png)
-   ![Load test creado](capturas/t5-paso-07-load-test-creado.png)
+   <img src="capturas/t5-paso-05-nuevo-load-test.png" alt="Nuevo load test" width="50%">
+   <img src="capturas/t5-paso-06-review-create.png" alt="Review create" width="50%">
+   <img src="capturas/t5-paso-07-load-test-creado.png" alt="Load test creado" width="50%">
 
 5. **Create** → **Add request** → introduce la URL de producción
 
-   ![Crear request](capturas/t5-paso-08-crear-request.png)
-   ![Agregar URL](capturas/t5-paso-09-agregar-url.png)
-   ![Request agregado](capturas/t5-paso-10-request-agregado.png)
+   <img src="capturas/t5-paso-08-crear-request.png" alt="Crear request" width="50%">
+   <img src="capturas/t5-paso-09-agregar-url.png" alt="Agregar URL" width="50%">
+   <img src="capturas/t5-paso-10-request-agregado.png" alt="Request agregado" width="50%">
 
 6. **Review + create** → **Create** → monitorea las métricas en tiempo real
 
-   ![Iniciar test](capturas/t5-paso-11-iniciar-test.png)
-   ![Métricas tiempo real](capturas/t5-paso-12-metricas-tiempo-real.png)
-   ![Resultado test](capturas/t5-paso-13-resultado-test.png)
+   <img src="capturas/t5-paso-11-iniciar-test.png" alt="Iniciar test" width="50%">
+   <img src="capturas/t5-paso-12-metricas-tiempo-real.png" alt="Métricas tiempo real" width="50%">
+   <img src="capturas/t5-paso-13-resultado-test.png" alt="Resultado test" width="50%">
 
 **Resultado esperado:**
 > La prueba de carga genera tráfico y las métricas muestran usuarios virtuales, tiempo de respuesta y requests por segundo.
@@ -310,7 +310,7 @@ az webapp create `
 
 `az104-rg9` → **Eliminar grupo de recursos**
 
-![Limpieza](capturas/limpieza-eliminar-rg.png)
+<img src="capturas/limpieza-eliminar-rg.png" alt="Limpieza" width="50%">
 
 ### Método B — CLI
 

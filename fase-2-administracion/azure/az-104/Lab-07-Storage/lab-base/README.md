@@ -1,4 +1,4 @@
-# Azure Storage — Lab 07
+﻿# Azure Storage — Lab 07
 
 > Fase: F2 | Cert: AZ-104 | Lab: 07 | Tipo: base
 
@@ -104,41 +104,41 @@ Storage Account: stlab07<sufijo> (GRS, East US)
 
 1. Portal → **Storage accounts** → **+ Create**
 
-   ![Buscar Storage accounts](capturas/t1-paso-01-buscar-storage-accounts.png)
-   ![Crear storage account](capturas/t1-paso-02-crear-storage-account.png)
+   <img src="capturas/t1-paso-01-buscar-storage-accounts.png" alt="Buscar Storage accounts" width="50%">
+   <img src="capturas/t1-paso-02-crear-storage-account.png" alt="Crear storage account" width="50%">
 
 2. **Basics**:
    - **RG:** `az104-rg7` | **Name:** nombre único global (3-24 chars, minúsculas)
    - **Region:** East US | **Performance:** Standard | **Redundancy:** GRS
    - Activa: *Make read access available in the event of regional unavailability*
 
-   ![Basics GRS config](capturas/t1-paso-03-basics-grs-config.png)
+   <img src="capturas/t1-paso-03-basics-grs-config.png" alt="Basics GRS config" width="50%">
 
 3. **Review + create** → **Create** → **Go to resource**
 
-   ![Review create](capturas/t1-paso-04-review-create.png)
-   ![Ir al recurso](capturas/t1-paso-05-ir-al-recurso.png)
+   <img src="capturas/t1-paso-04-review-create.png" alt="Review create" width="50%">
+   <img src="capturas/t1-paso-05-ir-al-recurso.png" alt="Ir al recurso" width="50%">
 
 4. **Security + networking → Networking** → verifica que el acceso público está deshabilitado
 
-   ![Networking disable](capturas/t1-paso-06-networking-disable.png)
+   <img src="capturas/t1-paso-06-networking-disable.png" alt="Networking disable" width="50%">
 
 5. **Manage** → cambia a **Enabled from selected networks** → añade tu IP actual
 
-   ![Habilitar redes seleccionadas](capturas/t1-paso-07-habilitar-redes-seleccionadas.png)
-   ![Agregar IP cliente](capturas/t1-paso-08-agregar-ip-cliente.png)
+   <img src="capturas/t1-paso-07-habilitar-redes-seleccionadas.png" alt="Habilitar redes seleccionadas" width="50%">
+   <img src="capturas/t1-paso-08-agregar-ip-cliente.png" alt="Agregar IP cliente" width="50%">
 
 6. **Data management → Redundancy** → revisa los centros de datos primario y secundario
 
-   ![Redundancia GRS](capturas/t1-paso-09-redundancia-grs.png)
+   <img src="capturas/t1-paso-09-redundancia-grs.png" alt="Redundancia GRS" width="50%">
 
 7. **Lifecycle management** → **+ Add a rule** → nombre: `Movetocool`:
    - Condición: blob no modificado en 30 días → mover a Cool tier
 
-   ![Lifecycle management](capturas/t1-paso-10-lifecycle-management.png)
-   ![Nueva regla lifecycle](capturas/t1-paso-11-nueva-regla-lifecycle.png)
-   ![Regla cool tier](capturas/t1-paso-12-regla-cool-tier.png)
-   ![Regla guardada](capturas/t1-paso-13-regla-guardada.png)
+   <img src="capturas/t1-paso-10-lifecycle-management.png" alt="Lifecycle management" width="50%">
+   <img src="capturas/t1-paso-11-nueva-regla-lifecycle.png" alt="Nueva regla lifecycle" width="50%">
+   <img src="capturas/t1-paso-12-regla-cool-tier.png" alt="Regla cool tier" width="50%">
+   <img src="capturas/t1-paso-13-regla-guardada.png" alt="Regla guardada" width="50%">
 
 ### Método B — CLI
 
@@ -172,34 +172,34 @@ az storage account management-policy create --account-name $stName --resource-gr
 1. **Data storage → Containers** → **+ Add container**:
    - **Name:** `data` | **Access:** Private
 
-   ![Containers menu](capturas/t2-paso-01-containers-menu.png)
-   ![Crear container data](capturas/t2-paso-02-crear-container-data.png)
+   <img src="capturas/t2-paso-01-containers-menu.png" alt="Containers menu" width="50%">
+   <img src="capturas/t2-paso-02-crear-container-data.png" alt="Crear container data" width="50%">
 
 2. En el contenedor `data` → menú `...` → **Access policy** → **Immutable blob storage → + Add policy**:
    - **Policy type:** Time-based retention | **Retain for:** 180 días
 
-   ![Access policy menu](capturas/t2-paso-03-access-policy-menu.png)
-   ![Immutable retention policy](capturas/t2-paso-04-immutable-retention-policy.png)
+   <img src="capturas/t2-paso-03-access-policy-menu.png" alt="Access policy menu" width="50%">
+   <img src="capturas/t2-paso-04-immutable-retention-policy.png" alt="Immutable retention policy" width="50%">
 
 3. **Upload** → expande **Advanced**:
    - Blob type: Block blob | Access tier: Hot | Upload to folder: `securitytest`
 
-   ![Subir archivo advanced](capturas/t2-paso-05-subir-archivo-advanced.png)
-   ![Archivo subido](capturas/t2-paso-06-archivo-subido.png)
+   <img src="capturas/t2-paso-05-subir-archivo-advanced.png" alt="Subir archivo advanced" width="50%">
+   <img src="capturas/t2-paso-06-archivo-subido.png" alt="Archivo subido" width="50%">
 
 4. Copia la URL del archivo → ábrela en ventana incógnito → verifica error `ResourceNotFound`
 
-   ![Acceso denegado sin SAS](capturas/t2-paso-07-acceso-denegado-sin-sas.png)
+   <img src="capturas/t2-paso-07-acceso-denegado-sin-sas.png" alt="Acceso denegado sin SAS" width="50%">
 
 5. Menú `...` del archivo → **Generate SAS**:
    - **Permissions:** Read | **Expiry:** mañana | **Signing key:** Key 1
 
-   ![Generar SAS](capturas/t2-paso-08-generar-sas.png)
-   ![Configurar SAS](capturas/t2-paso-09-configurar-sas.png)
+   <img src="capturas/t2-paso-08-generar-sas.png" alt="Generar SAS" width="50%">
+   <img src="capturas/t2-paso-09-configurar-sas.png" alt="Configurar SAS" width="50%">
 
 6. Copia el **Blob SAS URL** → ábrelo en ventana incógnito → el archivo debe ser visible
 
-   ![Archivo visible con SAS](capturas/t2-paso-10-archivo-visible-con-sas.png)
+   <img src="capturas/t2-paso-10-archivo-visible-con-sas.png" alt="Archivo visible con SAS" width="50%">
 
 ### Método B — CLI
 
@@ -234,37 +234,37 @@ Write-Host "URL con SAS: $url?$sas"
 1. **Data storage → File shares** → **+ File share**:
    - **Name:** `share1` | **Access tier:** Transaction optimized
 
-   ![File shares menu](capturas/t3-paso-01-file-shares-menu.png)
-   ![Crear file share](capturas/t3-paso-02-crear-file-share.png)
-   ![Share1 basics](capturas/t3-paso-03-share1-basics.png)
-   ![Share1 desplegado](capturas/t3-paso-04-share1-desplegado.png)
+   <img src="capturas/t3-paso-01-file-shares-menu.png" alt="File shares menu" width="50%">
+   <img src="capturas/t3-paso-02-crear-file-share.png" alt="Crear file share" width="50%">
+   <img src="capturas/t3-paso-03-share1-basics.png" alt="Share1 basics" width="50%">
+   <img src="capturas/t3-paso-04-share1-desplegado.png" alt="Share1 desplegado" width="50%">
 
 2. **Storage browser** → **File shares** → verifica `share1`
 
-   ![Storage browser](capturas/t3-paso-05-storage-browser.png)
-   ![Share1 en browser](capturas/t3-paso-06-share1-en-browser.png)
+   <img src="capturas/t3-paso-05-storage-browser.png" alt="Storage browser" width="50%">
+   <img src="capturas/t3-paso-06-share1-en-browser.png" alt="Share1 en browser" width="50%">
 
 3. Portal → **Virtual networks** → **+ Create**: nombre `vnet1` | RG `az104-rg7`
 
-   ![Buscar VNets](capturas/t3-paso-07-buscar-vnets.png)
-   ![Crear vnet1](capturas/t3-paso-08-crear-vnet1.png)
-   ![VNet1 review create](capturas/t3-paso-09-vnet1-review-create.png)
+   <img src="capturas/t3-paso-07-buscar-vnets.png" alt="Buscar VNets" width="50%">
+   <img src="capturas/t3-paso-08-crear-vnet1.png" alt="Crear vnet1" width="50%">
+   <img src="capturas/t3-paso-09-vnet1-review-create.png" alt="VNet1 review create" width="50%">
 
 4. En `vnet1` → **Settings → Service endpoints** → **+ Add**:
    - **Service:** `Microsoft.Storage` | **Subnets:** default
 
-   ![Service endpoints](capturas/t3-paso-10-service-endpoints.png)
-   ![Agregar storage endpoint](capturas/t3-paso-11-agregar-storage-endpoint.png)
+   <img src="capturas/t3-paso-10-service-endpoints.png" alt="Service endpoints" width="50%">
+   <img src="capturas/t3-paso-11-agregar-storage-endpoint.png" alt="Agregar storage endpoint" width="50%">
 
 5. Vuelve a la Storage Account → **Networking → Manage** → **+ Add a virtual network**:
    - Selecciona `vnet1` y la subred `default`
 
-   ![Networking manage](capturas/t3-paso-12-networking-manage.png)
-   ![Agregar vnet1](capturas/t3-paso-13-agregar-vnet1.png)
+   <img src="capturas/t3-paso-12-networking-manage.png" alt="Networking manage" width="50%">
+   <img src="capturas/t3-paso-13-agregar-vnet1.png" alt="Agregar vnet1" width="50%">
 
 6. Elimina tu IP del listado → Guarda → vuelve a Storage Browser → recarga → verifica acceso denegado
 
-   ![Acceso no autorizado](capturas/t3-paso-14-acceso-no-autorizado.png)
+   <img src="capturas/t3-paso-14-acceso-no-autorizado.png" alt="Acceso no autorizado" width="50%">
 
 ### Método B — CLI
 
