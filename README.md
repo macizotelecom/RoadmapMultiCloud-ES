@@ -57,6 +57,20 @@ Lab-XX-nombre/
 
 ---
 
+---
+
+## ☁️ Comparativas
+
+Dos documentos de referencia para orientar decisiones técnicas y de carrera:
+
+- **[Comparativa técnica de los 4 clouds](comparativa/COMPARATIVA-TECNICA.md)** — análisis por dominio (identidades, redes, compute, almacenamiento, seguridad), por tipo de empresa y por perfil técnico. Incluye integraciones multi-cloud verificadas contra documentación oficial.
+
+- **[Comparativa de caminos de certificación](comparativa/COMPARATIVA-CERTIFICACIONES.md)** — estructura de exámenes, precios, validez, prerrequisitos y el camino recomendado para el perfil de este roadmap. Basada en documentación oficial de Microsoft Learn, AWS, Google Cloud y Oracle University.
+
+---
+
+> ⚠️ **Nota de mantenimiento:** Los precios, características de tiers gratuitos y disponibilidad de conectores cambian con frecuencia. Siempre verifica contra la documentación oficial antes de tomar decisiones de arquitectura o presupuesto. Última revisión: mayo 2026.
+
 ## 📋 AZ-104 — Fase 2 Administración
 
 Los 14 labs del AZ-104 están documentados en español con capturas por cada paso,
