@@ -77,22 +77,22 @@ Los 14 labs del AZ-104 están documentados en español con capturas por cada pas
 3 métodos por tarea (Portal / CLI / IaC), errores comunes y análisis FinOps comparativo.
 Costo total de los 14 labs ejecutados y limpiados: **~$8–12 USD**.
 
-| # | Lab | Dominio AZ-104 |
-|---|-----|---------------|
-| 01 | [Entra ID Identidades](fase-2-administracion/azure/az-104/Lab-01-Entra-ID/lab-base/README.md) | Identidades y gobernanza (20–25%) |
-| 02a | [RBAC](fase-2-administracion/azure/az-104/Lab-02a-RBAC/lab-base/README.md) | Identidades y gobernanza (20–25%) |
-| 02b | [Azure Policy](fase-2-administracion/azure/az-104/Lab-02b-Policy/lab-base/README.md) | Identidades y gobernanza (20–25%) |
-| 03 | [ARM Templates y Bicep](fase-2-administracion/azure/az-104/Lab-03-ARM-Bicep/lab-base/README.md) | Recursos Azure (15–20%) |
-| 04 | [Virtual Networking](fase-2-administracion/azure/az-104/Lab-04-VNets/lab-base/README.md) | Redes virtuales (25–30%) |
-| 05 | [Intersite Connectivity](fase-2-administracion/azure/az-104/Lab-05-Intersite/lab-base/README.md) | Redes virtuales (25–30%) |
-| 06 | [Network Traffic Management](fase-2-administracion/azure/az-104/Lab-06-Traffic-Manager/lab-base/README.md) | Redes virtuales (25–30%) |
-| 07 | [Azure Storage](fase-2-administracion/azure/az-104/Lab-07-Storage/lab-base/README.md) | Almacenamiento (15–20%) |
-| 08 | [Virtual Machines](fase-2-administracion/azure/az-104/Lab-08-VMs/lab-base/README.md) | Compute (20–25%) |
-| 09a | [Web Apps PaaS](fase-2-administracion/azure/az-104/Lab-09a-PaaS-Web/lab-base/README.md) | Compute (20–25%) |
-| 09b | [Azure Container Instances](fase-2-administracion/azure/az-104/Lab-09b-ACI/lab-base/README.md) | Compute (20–25%) |
-| 09c | [Azure Container Apps](fase-2-administracion/azure/az-104/Lab-09c-AKS/lab-base/README.md) | Compute (20–25%) |
-| 10 | [Data Protection y Backup](fase-2-administracion/azure/az-104/Lab-10-Backup/lab-base/README.md) | Protección de datos (10–15%) |
-| 11 | [Monitoring](fase-2-administracion/azure/az-104/Lab-11-Monitoring/lab-base/README.md) | Monitoreo (10–15%) |
+| # | Lab | Dominio AZ-104 | Lab avanzado | FinOps |
+|---|-----|---------------|-------------|--------|
+| 01 | [Entra ID Identidades](fase-2-administracion/azure/az-104/Lab-01-Entra-ID/lab-base/README.md) | Identidades y gobernanza (20–25%) | 🔜 Pendiente | 🔜 Pendiente |
+| 02a | [RBAC](fase-2-administracion/azure/az-104/Lab-02a-RBAC/lab-base/README.md) | Identidades y gobernanza (20–25%) | 🔜 Pendiente | 🔜 Pendiente |
+| 02b | [Azure Policy](fase-2-administracion/azure/az-104/Lab-02b-Policy/lab-base/README.md) | Identidades y gobernanza (20–25%) | 🔜 Pendiente | 🔜 Pendiente |
+| 03 | [ARM Templates y Bicep](fase-2-administracion/azure/az-104/Lab-03-ARM-Bicep/lab-base/README.md) | Recursos Azure (15–20%) | 🔜 Pendiente | 🔜 Pendiente |
+| 04 | [Virtual Networking](fase-2-administracion/azure/az-104/Lab-04-VNets/lab-base/README.md) | Redes virtuales (25–30%) | 🔜 Pendiente | 🔜 Pendiente |
+| 05 | [Intersite Connectivity](fase-2-administracion/azure/az-104/Lab-05-Intersite/lab-base/README.md) | Redes virtuales (25–30%) | 🔜 Pendiente | 🔜 Pendiente |
+| 06 | [Network Traffic Management](fase-2-administracion/azure/az-104/Lab-06-Traffic-Manager/lab-base/README.md) | Redes virtuales (25–30%) | 🔜 Pendiente | 🔜 Pendiente |
+| 07 | [Azure Storage](fase-2-administracion/azure/az-104/Lab-07-Storage/lab-base/README.md) | Almacenamiento (15–20%) | 🔜 Pendiente | 🔜 Pendiente |
+| 08 | [Virtual Machines](fase-2-administracion/azure/az-104/Lab-08-VMs/lab-base/README.md) | Compute (20–25%) | 🔜 Pendiente | 🔜 Pendiente |
+| 09a | [Web Apps PaaS](fase-2-administracion/azure/az-104/Lab-09a-PaaS-Web/lab-base/README.md) | Compute (20–25%) | 🔜 Pendiente | 🔜 Pendiente |
+| 09b | [Azure Container Instances](fase-2-administracion/azure/az-104/Lab-09b-ACI/lab-base/README.md) | Compute (20–25%) | 🔜 Pendiente | 🔜 Pendiente |
+| 09c | [Azure Container Apps](fase-2-administracion/azure/az-104/Lab-09c-AKS/lab-base/README.md) | Compute (20–25%) | 🔜 Pendiente | 🔜 Pendiente |
+| 10 | [Data Protection y Backup](fase-2-administracion/azure/az-104/Lab-10-Backup/lab-base/README.md) | Protección de datos (10–15%) | 🔜 Pendiente | 🔜 Pendiente |
+| 11 | [Monitoring](fase-2-administracion/azure/az-104/Lab-11-Monitoring/lab-base/README.md) | Monitoreo (10–15%) | 🔜 Pendiente | 🔜 Pendiente |
 
 ---
 
